@@ -2,6 +2,7 @@ import { useState } from "react";
 import HeaderMiddle from "./HeaderMiddle";
 import HeaderTop from "./HeaderTop";
 import Nav from "./Nav";
+import HeaderBottom from "./HeaderBottom";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +13,9 @@ function Header() {
   return (
     <header>
       <HeaderTop />
-      <Nav isOpen={isOpen} handleOpen={handleOpen} />
       <HeaderMiddle handleOpen={handleOpen} />
+      <Nav isOpen={isOpen} handleOpen={handleOpen} />
+      <HeaderBottom />
     </header>
   );
 }

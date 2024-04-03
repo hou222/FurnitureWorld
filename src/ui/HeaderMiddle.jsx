@@ -32,7 +32,7 @@ function HeaderMiddle({ handleOpen }) {
             <button className="hover:bg-[#F3F5F9] rounded-full p-2">
               <HiOutlineShoppingBag />
             </button>
-            <p className="w-5 h-5 bg-[#4BB4B4] rounded-full text-center text-[13px] text-white font-semibold absolute top-2 -right-4">
+            <p className="w-5 h-5 bg-[#4BB4B4] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2">
               3
             </p>
           </div>
