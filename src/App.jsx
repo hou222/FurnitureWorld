@@ -1,9 +1,9 @@
-import Header from "./ui/Header";
+import AppLayout from "./ui/AppLayout";
 
 function App() {
   return (
     <div>
-      <Header />
+      <AppLayout />
     </div>
   );
 }

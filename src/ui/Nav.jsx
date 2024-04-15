@@ -1,4 +1,5 @@
 import { IoMdClose } from "react-icons/io";
+import List from "./List";
 function Nav({ isOpen, handleOpen }) {
   return (
     <nav
@@ -13,25 +14,40 @@ function Nav({ isOpen, handleOpen }) {
         onClick={handleOpen}
       />
       <ul className=" flex flex-col w-full gap-4 lg:flex-row font-semibold text-xl  lg:font-normal  md:m-3 lg:m-0 text-black ">
-        <li className="flex justify-between items-center gap-2 cursor-pointer">
-          <a>Home</a>
-          <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+        <li className="relative group">
+          <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
+            <a>Home</a>
+            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+          </div>
+          <List />
         </li>
-        <li className="flex justify-between items-center gap-2 cursor-pointer">
-          <a>Mega Menu</a>
-          <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+        <li className="relative group">
+          <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
+            <a>Mega Menu</a>
+            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+          </div>
+          <List />
         </li>
-        <li className="flex justify-between items-center gap-2 cursor-pointer">
-          <a>Full Screen Menu</a>
-          <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+        <li className="relative group">
+          <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
+            <a>Full Screen Menu</a>
+            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+          </div>
+          <List />
         </li>
-        <li className="flex justify-between items-center gap-2 cursor-pointer">
-          <a>User Account</a>
-          <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+        <li className="relative group">
+          <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
+            <a>User Account</a>
+            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+          </div>
+          <List />
         </li>
-        <li className="flex justify-between items-center gap-2 cursor-pointer">
-          <a>Vendor Account</a>
-          <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+        <li className="relative group">
+          <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
+            <a>Vendor Account</a>
+            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+          </div>
+          <List />
         </li>
       </ul>
     </nav>
