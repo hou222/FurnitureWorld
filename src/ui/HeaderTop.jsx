@@ -3,7 +3,7 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { GrTwitter } from "react-icons/gr";
 function HeaderTop() {
   return (
-    <div className=" bg-[#2b3445] px-4 py-2 md:px-8">
+    <div className=" bg-[#2b3445] px-4 py-2 md:px-8 ">
       <div className="flex justify-between  max-w-screen-xl mx-auto">
         <div className="flex gap-5 items-center ">
           <p className="bg-[#4BB4B4] py-1 px-3 rounded-2xl text-white font-bold text-sm">

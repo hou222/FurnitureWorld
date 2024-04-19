@@ -17,7 +17,7 @@ function HeaderMiddle() {
     setIsOpen1((open) => !open);
   }
   return (
-    <div className=" text-center w-full bg-white p-3 lg:px-5 lg:pt-5 lg:p-0">
+    <div className=" text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0">
       <IconContext.Provider
         value={{ size: "23", color: "#7d879c", className: "cursor-pointer" }}
       >
@@ -50,7 +50,7 @@ function HeaderMiddle() {
             </div>
           </div>
           <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
-            <div
+            <button
               className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer relative"
               onClick={handleOpen1}
             >
@@ -65,8 +65,8 @@ function HeaderMiddle() {
                 className="w-4 h-4"
               />
               <ul
-                className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm ${
-                  !isOpen1 && "hidden"
+                className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm z-[100] ${
+                  isOpen1 && "hidden"
                 }`}
               >
                 <li className="flex gap-2 px-3 py-2  hover:bg-slate-300">
@@ -86,7 +86,7 @@ function HeaderMiddle() {
                   <p>Games</p>
                 </li>
               </ul>
-            </div>
+            </button>
             <Nav isOpen={isOpen} handleOpen={handleOpen} />
           </div>
         </div>
