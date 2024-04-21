@@ -2,6 +2,8 @@ import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import MainTop from "./MainTop";
 import MainCenter from "./MainCenter";
+import Cart from "../Features/cart/Cart";
+import Carts from "../Features/cart/Carts";
 function Main() {
   const slideImages = [
     {
@@ -13,34 +15,21 @@ function Main() {
       caption: 2,
     },
   ];
+
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <Slide>
         {slideImages.map((image, index) => (
           <MainTop key={index} />
         ))}
       </Slide>
       <MainCenter />
-      <div className="px-3">
-        <h1 className="font-semibold text-3xl">All Product</h1>
-        <p className="text-[#7D879C] text-sm">
+      <div className="px-3 py-6">
+        <h1 className="font-semibold text-3xl mb-3">All Product</h1>
+        <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>
-        <div className="grid grid-cols-1">
-          <div className="border">
-            <div className="">
-              <div className="bg-[#F6F9FC] w-full h-[200px]"></div>
-              <img src="src/assets/chair1.png" alt="chair" />
-            </div>
-          </div>
-          {/* ------------------------------------------------------ */}
-          <div className="border">
-            <div className="">
-              <div className="bg-[#F6F9FC] w-full h-[200px]"></div>
-              <img src="src/assets/chair4.png" alt="chair" />
-            </div>
-          </div>
-        </div>
+        <Carts />
       </div>
     </div>
   );

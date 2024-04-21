@@ -1,7 +1,7 @@
 function MainTop() {
   return (
     <div
-      className={`bg-[url("src/assets/bg-furniture.jpg")]  bg-cover h-[600px] w-full bg-center bg-no-repeat flex flex-col justify-center items-center sm:items-start gap-4 p-10 text-[#2B3445] max-w-screen-xl mx-auto`}
+      className={`bg-[url("src/assets/bg-furniture.jpg")]  bg-cover h-[600px] w-full bg-center bg-no-repeat flex flex-col justify-center items-center sm:items-start gap-4 p-10 text-[#2B3445]`}
     >
       <p className="font-semibold text-sm sm:text-base">A Beautiful House_</p>
       <p className="text-4xl font-bold w-[190px]  text-center sm:w-full sm:text-start sm:text-5xl lg:text-6xl">
