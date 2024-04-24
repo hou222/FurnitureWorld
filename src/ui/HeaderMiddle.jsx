@@ -62,7 +62,7 @@ function HeaderMiddle() {
               <img
                 src="src/assets/right.png"
                 alt="right-arrow"
-                className="w-4 h-4"
+                className="w-3 h-3"
               />
               <ul
                 className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm z-[100] ${
