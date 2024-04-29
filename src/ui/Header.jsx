@@ -1,11 +1,11 @@
 import HeaderMiddle from "./HeaderMiddle";
 import HeaderTop from "./HeaderTop";
 
-function Header() {
+function Header({ color }) {
   return (
     <header>
-      <HeaderTop />
-      <HeaderMiddle />
+      <HeaderTop color={color} />
+      <HeaderMiddle color={color} />
     </header>
   );
 }

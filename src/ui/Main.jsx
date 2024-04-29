@@ -2,7 +2,6 @@ import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
 import MainTop from "./MainTop";
 import MainCenter from "./MainCenter";
-import Carts from "../Features/cart/Carts";
 import CartSlide from "../Features/cart/CartSlide";
 import Products from "../Features/product/Products";
 function Main() {

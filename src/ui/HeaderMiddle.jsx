@@ -3,13 +3,14 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import SearchBar from "../Features/SearchBar";
 import { IconContext } from "react-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Nav from "./Nav";
+import { MyContext } from "../MyContext";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
-
+  const { color } = useContext(MyContext);
   function handleOpen() {
     setIsOpen((open) => !open);
   }
@@ -44,7 +45,12 @@ function HeaderMiddle() {
               <button className="hover:bg-[#F3F5F9] rounded-full p-2">
                 <HiOutlineShoppingBag />
               </button>
-              <p className="w-5 h-5 bg-[#4BB4B4] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2">
+
+              <p
+                className={`w-5 h-5 bg-[${
+                  color ? "#4BB4B4" : "red"
+                }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
+              >
                 3
               </p>
             </div>
