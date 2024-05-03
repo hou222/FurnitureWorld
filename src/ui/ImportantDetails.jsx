@@ -1,4 +1,4 @@
-function MainCenter() {
+function ImportantDetails() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 py-10 px-3 xl:px-0 gap-6 max-w-screen-xl mx-auto">
       <div className="flex justify-between items-center py-4 px-7 lg:px-8 bg-[#fafafa]">
@@ -79,4 +79,4 @@ function MainCenter() {
   );
 }
 
-export default MainCenter;
+export default ImportantDetails;

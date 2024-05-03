@@ -1,4 +1,4 @@
-function MainTop() {
+function SlideDetails() {
   return (
     <div
       className={`bg-[url("src/assets/bg-furniture.jpg")]  bg-cover h-[600px] w-full bg-center bg-no-repeat flex flex-col justify-center items-center sm:items-start gap-4 p-10 text-[#2B3445]`}
@@ -17,11 +17,11 @@ function MainTop() {
         Shop Now
       </button>
       {/* <div className="bg-red-600 w-full flex justify-center gap-2 p-3 absolute bottom-0">
-    <div className="w-3 h-3 border  border-blue-600 rounded-full"></div>
-    <div className="w-3 h-3 border border-blue-600 rounded-full"></div>
-  </div> */}
+      <div className="w-3 h-3 border  border-blue-600 rounded-full"></div>
+      <div className="w-3 h-3 border border-blue-600 rounded-full"></div>
+    </div> */}
     </div>
   );
 }
 
-export default MainTop;
+export default SlideDetails;

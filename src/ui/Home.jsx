@@ -1,10 +1,10 @@
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
-import MainTop from "./MainTop";
-import MainCenter from "./MainCenter";
 import CartSlide from "../Features/cart/CartSlide";
 import Products from "../Features/product/Products";
-function Main() {
+import SlideDetails from "./SlideDetails";
+import ImportantDetails from "./ImportantDetails";
+function Home() {
   const slideImages = [
     {
       url: "src/assets/bg-furniture.jpg",
@@ -20,10 +20,10 @@ function Main() {
     <div className="max-w-screen-xl mx-auto">
       <Slide>
         {slideImages.map((image, index) => (
-          <MainTop key={index} />
+          <SlideDetails key={index} />
         ))}
       </Slide>
-      <MainCenter />
+      <ImportantDetails />
       <div className="px-3 py-6">
         <h1 className="font-semibold text-3xl mb-3">Top New Product</h1>
         <p className="text-[#7D879C] text-sm mb-8">
@@ -42,4 +42,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;
