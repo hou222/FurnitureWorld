@@ -12,7 +12,7 @@ function HeaderTop() {
         <div className="flex gap-5 items-center ">
           <p
             className={`bg-[${
-              color ? "#4BB4B4" : "red"
+              color ? "#4BB4B4" : "#d23f57"
             }] py-1 px-3 rounded-2xl text-white font-bold text-sm`}
           >
             HOT

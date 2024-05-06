@@ -1,78 +1,24 @@
+import { useContext } from "react";
 import Product from "./Product";
-
-const db = [
-  {
-    index: 0,
-    image: "chair1",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 1,
-    image: "chair4",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 2,
-    image: "chair2",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 3,
-    image: "chair3",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 4,
-    image: "chair1",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 5,
-    image: "chair4",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 6,
-    image: "chair2",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 7,
-    image: "chair3",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-  {
-    index: 8,
-    image: "chair2",
-    nameP: "Comfortable Sofa",
-    newPrice: 120.0,
-    oldPrice: 150.0,
-  },
-];
-
-function Products() {
+import { MyContext } from "../../MyContext";
+import { useNavigate } from "react-router";
+function Products({ children }) {
+  const { products } = useContext(MyContext);
+  const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 ll:grid-cols-3">
-      {db.map((product) => (
-        <Product key={product.index} product={product} />
-      ))}
-      {/* <Product image="chair1" />
+    <div className="px-3 py-6">
+      {children}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 ll:grid-cols-3">
+        {products.map((product, index) => (
+          <Product
+            key={index}
+            product={product}
+            onClick={() => {
+              navigate("/cart");
+            }}
+          />
+        ))}
+        {/* <Product image="chair1" />
       <Product image="chair4" />
       <Product image="chair3" />
       <Product image="chair1" />
@@ -81,6 +27,7 @@ function Products() {
       <Product image="chair1" />
       <Product image="chair4" />
       <Product image="chair3" /> */}
+      </div>
     </div>
   );
 }

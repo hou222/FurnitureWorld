@@ -6,11 +6,14 @@ import { IconContext } from "react-icons";
 import { useContext, useState } from "react";
 import Nav from "./Nav";
 import { MyContext } from "../MyContext";
+import { useNavigate } from "react-router";
+import Logo from "./Logo";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   const { color } = useContext(MyContext);
+  const navigate = useNavigate();
   function handleOpen() {
     setIsOpen((open) => !open);
   }
@@ -29,10 +32,12 @@ function HeaderMiddle() {
               {/* <IoIosMenu className="absolute top-0 bottom-0 my-auto left-6" /> */}
             </button>
             {/* <Nav isOpen={isOpen} handleOpen={handleOpen} /> */}
-            <div className="flex flex-col justify-center items-center gap-5">
-              <div className=" flex flex-col  border-2 justify-center w-11 h-11 lg:w-14 lg:h-14 rounded-full border-[#2b3445] items-center lg:absolute lg:top-0 lg:bottom-0 lg:my-auto lg:left-6">
-                <img src="src/assets/market1.png" alt="market" />
-              </div>
+            <div className="flex flex-col justify-center items-center gap-5 ">
+              <Logo
+                onClick={() => {
+                  navigate("/home");
+                }}
+              />
               <SearchBar />
             </div>
             <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
@@ -48,7 +53,7 @@ function HeaderMiddle() {
 
               <p
                 className={`w-5 h-5 bg-[${
-                  color ? "#4BB4B4" : "red"
+                  color ? "#4BB4B4" : "#d23f57"
                 }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
               >
                 3

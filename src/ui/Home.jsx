@@ -1,6 +1,6 @@
 import "react-slideshow-image/dist/styles.css";
 import { Slide } from "react-slideshow-image";
-import CartSlide from "../Features/cart/CartSlide";
+//import CartSlide from "../Features/cart/CartSlide";
 import Products from "../Features/product/Products";
 import SlideDetails from "./SlideDetails";
 import ImportantDetails from "./ImportantDetails";
@@ -29,15 +29,15 @@ function Home() {
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>
-        <CartSlide />
+        {/* <CartSlide /> */}
       </div>
-      <div className="px-3 py-6">
+
+      <Products>
         <h1 className="font-semibold text-3xl mb-3">All Product</h1>
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>
-        <Products />
-      </div>
+      </Products>
     </div>
   );
 }
