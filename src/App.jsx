@@ -4,6 +4,7 @@ import AppLayout from "./ui/AppLayout";
 import Cart from "./Features/cart/Cart";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./ui/Home";
+import { ScrollToTop } from "./utils/ScrollToTop";
 
 function App() {
   const products = [
@@ -77,6 +78,7 @@ function App() {
     <div>
       <MyContext.Provider value={{ color, setColor, products }}>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route element={<AppLayout />}>
               <Route index element={<Navigate replace to="home" />} />
