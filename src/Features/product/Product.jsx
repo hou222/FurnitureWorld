@@ -33,10 +33,10 @@ function Product({ product, onClick }) {
           <div className="rounded-full w-3 h-3 bg-[#BE7374]"></div>
         </div>
         <div className="flex justify-between mt-2 items-center">
-          <p className="text-green-600 text-sm font-semibold">
-            {product.newPrice}
+          <p className="text-green-600 text-sm font-semibold xl:text-base">
+            ${product.newPrice}.00{" "}
             <span className="line-through text-[#7D879C]">
-              {product.oldPrice}
+              ${product.oldPrice}.00
             </span>
           </p>
           <div className="w-8 h-8  text-2xl border border-[#4BB4B4]  text-[#4BB4B4] bg-[url('src/assets/plus.png')] bg-no-repeat bg-center "></div>
