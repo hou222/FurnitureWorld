@@ -13,7 +13,7 @@ function Nav({ isOpen, handleOpen }) {
         className="absolute top-8 right-10 cursor-pointer lg:hidden"
         onClick={handleOpen}
       />
-      <ul className=" flex flex-col w-full gap-4 lg:flex-row font-semibold text-xl  lg:font-normal  md:m-3 lg:m-0 text-black ">
+      <ul className=" flex flex-col w-full gap-4 lg:flex-row font-semibold text-xl lg:text-base lg:font-normal  md:m-3 lg:m-0 text-black ">
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>Home</a>

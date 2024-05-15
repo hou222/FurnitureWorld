@@ -1,51 +1,111 @@
 import { useNavigate } from "react-router";
 import Product from "../product/Product";
-import { useContext, useRef, useState } from "react";
+import Slider from "react-slick";
+import { useContext, useRef } from "react";
 import { MyContext } from "../../MyContext";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function CartSlide({ children }) {
-  const indexRef = useRef();
-  const [move, setMove] = useState(false);
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
-  const indexSlide = 0;
-  console.log(indexRef.current.children[0].offsetWidth);
-  function handleMove() {
-    setMove((move) => !move);
-  }
+
+  const slider = useRef(null);
+  /* const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          arrows: false,
+          centerPadding: "50px", // Add this line to reduce centerPadding for smaller screens
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          centerPadding: "0px", // Add this line to remove centerPadding for smallest screens
+        },
+      },
+    ],
+  }; */
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 980,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className="px-3 py-6">
       {children}
-      <div
-        /* className="relative overflow-hidden" */ className="relative bg-yellow-500"
-      >
+      <div className="slider-container relative">
         <button
-          className="w-8 h-8 text rounded-sm  bg-[url('src/assets/leftArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 left-2 my-auto z-10 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300"
-          onClick={() => handleMove()}
+          className="w-8 h-8 xl:w-11 xl:h-11  text rounded-sm  bg-[url('src/assets/leftArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 left-2 my-auto z-10 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300"
+          onClick={() => slider?.current?.slickPrev()}
         ></button>
-        <div
-          ref={indexRef}
-          className={`py-2 gap-3  flex flex-row justify-start items-center ease-out duration-300 ${
-            move
-              ? `translate-x-[-${indexRef.current.children[0].offsetWidth}px]`
-              : ""
-          }`}
-        >
+        <Slider ref={slider} {...settings}>
           {products.map((product, index) =>
-            index <= 3 ? (
-              <Product
-                key={index}
-                product={product}
-                onClick={() => {
-                  navigate("/cart");
-                }}
-              />
+            index <= 6 ? (
+              <div key={index}>
+                <Product
+                  product={product}
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
+                />
+              </div>
             ) : (
               ""
             )
           )}
-        </div>
-        <div className="w-8 h-8 text rounded-sm  bg-[url('src/assets/rightArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 right-2 my-auto z-10 mx-2 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300"></div>
+        </Slider>
+        <button
+          className="w-8 h-8 xl:w-11 xl:h-11 text rounded-sm  bg-[url('src/assets/rightArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 right-2 my-auto z-10 mx-2 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300"
+          onClick={() => slider?.current?.slickNext()}
+        ></button>
       </div>
     </div>
   );

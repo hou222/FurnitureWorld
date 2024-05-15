@@ -1,17 +1,14 @@
 function Product({ product, onClick }) {
-  const x = false;
-
   return (
     <div
       className=" border-2 border-[#F6F9FC] relative p-3 w-full h-[410px]  cursor-pointer "
       onClick={onClick}
     >
       <div className="bg-[#F6F9FC] w-full h-[200px] absolute top-0 right-0 left-0 p-3">
-        {x ? (
-          <p className="bg-[#4BB4B4] w-fit px-4 py-1 text-[11px] text-white font-semibold ">
-            5% off
-          </p>
-        ) : (
+        <p className="bg-[#4BB4B4] w-fit px-4 py-1 text-[11px] text-white font-semibold ">
+          5% off
+        </p>
+        {product.newProd && (
           <img
             src="src/assets/new.png"
             alt="new"

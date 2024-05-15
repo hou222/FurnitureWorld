@@ -1,13 +1,14 @@
 import "react-slideshow-image/dist/styles.css";
-import { Slide } from "react-slideshow-image";
+import Slider from "react-slick";
 import CartSlide from "../Features/cart/CartSlide";
 import Products from "../Features/product/Products";
 import SlideDetails from "./SlideDetails";
 import ImportantDetails from "./ImportantDetails";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "../MyContext";
 function Home() {
   const { setColor } = useContext(MyContext);
+  const [slide, setSlide] = useState(0);
   useEffect(() => {
     setColor(true);
   }, [setColor]);
@@ -22,13 +23,45 @@ function Home() {
     },
   ];
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
+  const slider = useRef(null);
+  function handleSlide(index) {
+    setSlide(index);
+    index === 0 ? slider?.current?.slickPrev() : slider?.current?.slickNext();
+  }
   return (
     <div className="max-w-screen-xl mx-auto">
-      <Slide>
-        {slideImages.map((image, index) => (
-          <SlideDetails key={index} />
-        ))}
-      </Slide>
+      <div className="bg-red-500 relative">
+        <Slider ref={slider} {...settings}>
+          {slideImages.map((image, index) => (
+            <SlideDetails key={index} />
+          ))}
+        </Slider>
+        <div className=" absolute bottom-0  left-0 right-0 flex justify-center items-center gap-2 py-7">
+          {slideImages.map((_, index) => (
+            <button
+              key={index}
+              className={`w-5 h-5 border border-[#4BB4B4] rounded-full flex justify-center items-center ${
+                slide === index ? "" : ""
+              }`}
+              onClick={() => handleSlide(index)}
+            >
+              <div
+                className={`${
+                  slide === index ? "bg-[#4BB4B4]" : "bg-transparent"
+                } w-3 h-3 rounded-full`}
+              ></div>
+            </button>
+          ))}
+        </div>
+      </div>
       <ImportantDetails />
 
       <CartSlide>

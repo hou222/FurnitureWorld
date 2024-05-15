@@ -14,6 +14,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: true,
     },
     {
       id: 205454,
@@ -21,6 +22,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: false,
     },
     {
       id: 205454,
@@ -28,6 +30,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: true,
     },
     {
       id: 205454,
@@ -35,6 +38,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: false,
     },
     {
       id: 205454,
@@ -42,6 +46,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: true,
     },
     {
       id: 205454,
@@ -49,6 +54,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: false,
     },
     {
       id: 205454,
@@ -56,6 +62,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: false,
     },
     {
       id: 205454,
@@ -63,6 +70,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: false,
     },
     {
       id: 205454,
@@ -70,6 +78,7 @@ function App() {
       nameP: "Comfortable Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
+      newProd: true,
     },
   ];
   const [color, setColor] = useState(true);
