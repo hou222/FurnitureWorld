@@ -14,7 +14,7 @@ function Products({ children }) {
             key={index}
             product={product}
             onClick={() => {
-              navigate("/cart");
+              navigate("/product");
             }}
           />
         ))}

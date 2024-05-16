@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router";
-import Product from "../product/Product";
+import Product from "./Product";
 import Slider from "react-slick";
 import { useContext, useRef } from "react";
 import { MyContext } from "../../MyContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function CartSlide({ children }) {
+function ProductSlide({ children }) {
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
 
@@ -73,4 +73,4 @@ function CartSlide({ children }) {
   );
 }
 
-export default CartSlide;
+export default ProductSlide;

@@ -1,11 +1,11 @@
 import "react-slideshow-image/dist/styles.css";
 import Slider from "react-slick";
-import CartSlide from "../Features/cart/CartSlide";
 import Products from "../Features/product/Products";
 import SlideDetails from "./SlideDetails";
 import ImportantDetails from "./ImportantDetails";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "../MyContext";
+import ProductSlide from "../Features/product/ProductSlide";
 function Home() {
   const { setColor } = useContext(MyContext);
   const [slide, setSlide] = useState(0);
@@ -64,12 +64,12 @@ function Home() {
       </div>
       <ImportantDetails />
 
-      <CartSlide>
+      <ProductSlide>
         <h1 className="font-semibold text-3xl mb-3">Top New Product</h1>
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>
-      </CartSlide>
+      </ProductSlide>
 
       <Products>
         <h1 className="font-semibold text-3xl mb-3">All Product</h1>

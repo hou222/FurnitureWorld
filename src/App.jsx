@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { MyContext } from "./MyContext";
 import AppLayout from "./ui/AppLayout";
-import Cart from "./Features/cart/Cart";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./ui/Home";
 import { ScrollToTop } from "./utils/ScrollToTop";
+import ProductPage from "./Features/product/ProductPage";
 
 function App() {
   const products = [
@@ -92,7 +92,7 @@ function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Navigate replace to="home" />} />
               <Route path="home" element={<Home />} />
-              <Route path="cart" element={<Cart />} />
+              <Route path="product" element={<ProductPage />} />
               {/* <Route path="product" element={<Products />} /> */}
             </Route>
           </Routes>

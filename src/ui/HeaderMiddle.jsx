@@ -8,17 +8,22 @@ import Nav from "./Nav";
 import { MyContext } from "../MyContext";
 import { useNavigate } from "react-router";
 import Logo from "./Logo";
+import Cart from "../Features/cart/Cart";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const { color } = useContext(MyContext);
   const navigate = useNavigate();
-  function handleOpen() {
+  function handleNav() {
     setIsOpen((open) => !open);
   }
-  function handleOpen1() {
+  function handleDropDown() {
     setIsOpen1((open) => !open);
+  }
+  function handleCart() {
+    setCartOpen((open) => !open);
   }
   return (
     <div className=" text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0">
@@ -27,9 +32,8 @@ function HeaderMiddle() {
       >
         <div className=" max-w-screen-xl mx-auto  ">
           <div className="flex justify-center items-center relative">
-            <button className="z-1 lg:hidden bg-blue-500" onClick={handleOpen}>
+            <button className="z-1 lg:hidden bg-blue-500" onClick={handleNav}>
               <IoIosMenu className="absolute top-4  left-6" />
-              {/* <IoIosMenu className="absolute top-0 bottom-0 my-auto left-6" /> */}
             </button>
             {/* <Nav isOpen={isOpen} handleOpen={handleOpen} /> */}
             <div className="flex flex-col justify-center items-center gap-5 ">
@@ -41,13 +45,13 @@ function HeaderMiddle() {
               <SearchBar />
             </div>
             <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
-              {/* <button className="hover:bg-[#F3F5F9] rounded-full p-2">
-              <BiSearch className="lg:hidden" />
-            </button> */}
               <button className="hover:bg-[#F3F5F9] rounded-full p-2">
                 <HiOutlineUser />
               </button>
-              <button className="hover:bg-[#F3F5F9] rounded-full p-2">
+              <button
+                className="hover:bg-[#F3F5F9] rounded-full p-2"
+                onClick={handleCart}
+              >
                 <HiOutlineShoppingBag />
               </button>
 
@@ -63,7 +67,7 @@ function HeaderMiddle() {
           <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
             <button
               className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer relative"
-              onClick={handleOpen1}
+              onClick={handleDropDown}
             >
               <div className="flex gap-2">
                 <img src="src/assets/category.png" alt="category" />
@@ -98,7 +102,8 @@ function HeaderMiddle() {
                 </li>
               </ul>
             </button>
-            <Nav isOpen={isOpen} handleOpen={handleOpen} />
+            <Nav isOpen={isOpen} handleOpen={handleNav} />
+            <Cart isOpen={cartOpen} handleCart={handleCart} />
           </div>
         </div>
       </IconContext.Provider>

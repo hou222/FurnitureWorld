@@ -1,99 +1,35 @@
-import { useContext, useEffect } from "react";
-import Rating from "./Rating";
-import { MyContext } from "../../MyContext";
-
-function Cart() {
-  const { setColor } = useContext(MyContext);
-  useEffect(() => {
-    setColor(false);
-  }, [setColor]);
+import { IoMdClose } from "react-icons/io";
+function Cart({ isOpen, handleCart }) {
   return (
-    <div className="bg-[#F6F9FC]">
-      <div className="max-w-screen-xl mx-auto flex flex-col  ll:flex-row ll:gap-[30px] p-3 ll:py-10">
-        <div className="flex justify-center items-center flex-col p-2">
-          <img
-            src={`src/assets/chair5.png`}
-            alt="product"
-            className="w-80 h-80 ll:w-[550px] ll:h-[550px]"
-          />
-
-          <div className="flex justify-center items-center gap-2 py-3">
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl border-red-500">
-              <img
-                src="src/assets/chair5.png"
-                alt="product"
-                className="w-10 h-10 "
-              />
-            </div>
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
-              <img
-                src="src/assets/chair5.png"
-                alt="product"
-                className="w-10 h-10"
-              />
-            </div>
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
-              <img
-                src="src/assets/chair5.png"
-                alt="product"
-                className="w-10 h-10"
-              />
-            </div>
-          </div>
+    <div
+      className={` transition-all duration-300 absolute top-0 h-screen w-full bg-white lg:transition-none lg:h-auto lg:w-fit lg:px-5 lg:py-3 lg:static z-10 ${
+        !isOpen ? "right-0 block" : "-right-full"
+      }`}
+    >
+      <div className="border-b px-10 py-6 flex justify-between items-center">
+        <div>4 item</div>
+        <IoMdClose
+          color="#7d879c"
+          size={23}
+          className="cursor-pointer lg:hidden"
+          onClick={handleCart}
+        />
+      </div>
+      <div className="bg-red-200 flex justify-between">
+        <div>
+          <button>+</button>
+          <p>1</p>
+          <button>-</button>
         </div>
-
-        {/* //////////////////////////////////////////////////////////////////////////// */}
-        <div className="flex flex-col gap-3 items-start ">
-          <p className="text-3xl font-bold ll:text-4xl ">Grey Sofa</p>
-          <p className="text-sm ll:text-base">
-            Brand:<span className="font-semibold">Xiaomi</span>
-          </p>
-          <p className="text-sm flex gap-2  items-center ll:text-base">
-            Rated:
-            <Rating />
-            (50)
-          </p>
+        <div>
+          <img src="" alt="" />
           <div>
-            <p className="text-sm font-semibold ll:text-base">Option</p>
-            <div className="flex justify-start items-center gap-2 text-sm py-2">
-              <div className="bg-[#FCE9EC] py-2 px-3 rounded-md text-[#d23f57] lg:py-[10px] lg:px-4">
-                option 1
-              </div>
-              <div className="bg-[#00000014] py-2 px-3 rounded-md lg:py-[10px] lg:px-4">
-                option 2
-              </div>
-              <div className="bg-[#00000014] py-2 px-3 rounded-md lg:py-[10px] lg:px-4">
-                option 3
-              </div>
-              <div className="bg-[#00000014] py-2 px-3 rounded-md lg:py-[10px] lg:px-4">
-                option 4
-              </div>
-            </div>
+            <p>Comfortable Sofa</p>
+            <p>$150.00 x 2</p>
+            <p>$300.00</p>
           </div>
-          <div className="">
-            <p className="text-sm font-semibold ll:text-base">Type</p>
-            <div className="flex justify-start items-center gap-2 text-sm py-2 ">
-              <div className="bg-[#FCE9EC] py-2 px-3 rounded-md text-[#d23f57] lg:py-[10px] lg:px-4">
-                type 1
-              </div>
-              <div className="bg-[#00000014] py-2 px-3 rounded-md lg:py-[10px] lg:px-4 ">
-                type 2
-              </div>
-              <div className="bg-[#00000014] py-2 px-3 rounded-md  ">
-                type 3
-              </div>
-            </div>
-          </div>
-          <div className="py-2 flex flex-col gap-1">
-            <p className="text-[#d23f57] font-bold text-2xl ll:text-3xl">
-              $200.00
-            </p>
-            <p className="text-sm ll:text-base">Stock Available</p>
-          </div>
-          <button className="text-white bg-[#d23f57] py-2 px-7 rounded-md font-semibold text-sm ll:text-base ll:py-3 ll:px-9">
-            Add To Cart
-          </button>
         </div>
+        <IoMdClose color="#7d879c" size={20} className="cursor-pointer" />
       </div>
     </div>
   );
