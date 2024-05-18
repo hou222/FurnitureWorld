@@ -80,7 +80,7 @@ function HeaderMiddle() {
                 className="w-3 h-3"
               />
               <ul
-                className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm z-20 ${
+                className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm z-30 ${
                   isOpen1 && "hidden"
                 }`}
               >
