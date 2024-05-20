@@ -5,7 +5,7 @@ function Product({ product, onClick }) {
       onClick={onClick}
     >
       <div className="bg-[#F6F9FC] w-full h-[200px] absolute top-0 right-0 left-0 p-3">
-        <p className="bg-[#4BB4B4] w-fit px-4 py-1 text-[11px] text-white font-semibold ">
+        <p className="bg-[#4BB4B4] w-fit px-4 py-1 text-[11px] text-white font-semibold">
           5% off
         </p>
         {product.newProd && (
@@ -19,7 +19,7 @@ function Product({ product, onClick }) {
       <img
         src={product.image}
         alt="chair"
-        className="w-[200px] h-[250px] absolute top-10 left-0 right-0 m-auto"
+        className="w-[250px] h-[250px] absolute top-10 left-0 right-0 m-auto"
       />
       <div className="absolute  bottom-0 left-0 right-0 p-3">
         <p className="font-semibold text-2xl">{product.nameP}</p>

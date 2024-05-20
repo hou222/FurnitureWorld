@@ -1,11 +1,14 @@
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import CartItem from "./CartItem";
+import { useContext } from "react";
+import { MyContext } from "../../MyContext";
 function Cart({ isOpen, handleCart }) {
+  const { color } = useContext(MyContext);
   return (
     <div
-      className={`flex flex-col justify-between transition-all duration-300 absolute  top-0 h-screen w-full bg-white lg:transition-none lg:h-auto lg:w-fit lg:px-5 lg:py-3 lg:static z-20  ${
-        !isOpen ? "right-0 block" : "-right-full"
+      className={`flex flex-col justify-between transition-all duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4      z-20  ${
+        isOpen ? "right-0 block" : "-right-full"
       }`}
     >
       <div className=" px-10 py-6 flex justify-between items-center ">
@@ -15,19 +18,29 @@ function Cart({ isOpen, handleCart }) {
         <IoMdClose
           color="#7d879c"
           size={23}
-          className="cursor-pointer lg:hidden"
+          className="cursor-pointer"
           onClick={handleCart}
         />
       </div>
-      <div className="overflow-scroll h-full">
+      <div className="overflow-auto h-full">
         <CartItem />
       </div>
 
       <div className=" px-6 py-6 flex flex-col gap-2">
-        <button className="bg-[#d23f57] text-white py-2 font-semibold text-sm w-full rounded-md">
+        <button
+          className={`bg-[${
+            color ? "#4BB4B4" : "#d23f57"
+          }] text-white py-2 font-semibold text-sm w-full rounded-md`}
+        >
           Checkout Now ($867.00)
         </button>
-        <button className="py-2  w-full border border-[#d23f57] text-[#d23f57] font-semibold text-sm rounded-md">
+        <button
+          className={`py-2  w-full border border-[${
+            color ? "#4BB4B4" : "#d23f57"
+          }] text-[${
+            color ? "#4BB4B4" : "#d23f57"
+          }] font-semibold text-sm rounded-md`}
+        >
           View Cart
         </button>
       </div>
