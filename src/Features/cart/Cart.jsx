@@ -3,12 +3,16 @@ import { IoMdClose } from "react-icons/io";
 import CartItem from "./CartItem";
 import { useContext } from "react";
 import { MyContext } from "../../MyContext";
+
 function Cart({ isOpen, handleCart }) {
   const { color } = useContext(MyContext);
+  document.body.style.overflowX = "hidden";
   return (
     <div
-      className={`flex flex-col justify-between transition-all duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4      z-20  ${
-        isOpen ? "right-0 block" : "-right-full"
+      className={`flex flex-col justify-between transition-all  duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-10 ${
+        isOpen
+          ? "right-0"
+          : "-right-full sm:-right-2/3 md:-right-1/2 lg:-right-1/4"
       }`}
     >
       <div className=" px-10 py-6 flex justify-between items-center ">

@@ -16,14 +16,21 @@ function HeaderMiddle() {
   const [cartOpen, setCartOpen] = useState(false);
   const { color } = useContext(MyContext);
   const navigate = useNavigate();
+
   function handleNav() {
     setIsOpen((open) => !open);
+    isOpen
+      ? (document.body.style.overflow = "unset")
+      : (document.body.style.overflow = "hidden");
   }
   function handleDropDown() {
     setIsOpen1((open) => !open);
   }
   function handleCart() {
     setCartOpen((open) => !open);
+    cartOpen
+      ? (document.body.style.overflow = "unset")
+      : (document.body.style.overflow = "hidden");
   }
   return (
     <div className=" text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0">

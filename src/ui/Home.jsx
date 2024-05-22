@@ -37,7 +37,7 @@ function Home() {
     index === 0 ? slider?.current?.slickPrev() : slider?.current?.slickNext();
   }
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div className="max-w-screen-xl mx-auto ">
       <div className="bg-red-500 relative">
         <Slider ref={slider} {...settings}>
           {slideImages.map((image, index) => (

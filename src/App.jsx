@@ -106,10 +106,12 @@ function App() {
     },
   ];
   const [color, setColor] = useState(true);
-
+  const [searchInput, setSearchInput] = useState("");
   return (
     <div>
-      <MyContext.Provider value={{ color, setColor, products }}>
+      <MyContext.Provider
+        value={{ color, setColor, products, searchInput, setSearchInput }}
+      >
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -117,7 +119,6 @@ function App() {
               <Route index element={<Navigate replace to="home" />} />
               <Route path="home" element={<Home />} />
               <Route path="product" element={<ProductPage />} />
-              {/* <Route path="product" element={<Products />} /> */}
             </Route>
           </Routes>
         </BrowserRouter>

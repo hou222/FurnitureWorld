@@ -55,7 +55,7 @@ function ProductSlide({ children }) {
                 <Product
                   product={product}
                   onClick={() => {
-                    navigate("/cart");
+                    navigate("/product");
                   }}
                 />
               </div>
