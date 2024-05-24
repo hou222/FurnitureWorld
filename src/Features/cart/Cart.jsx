@@ -19,12 +19,13 @@ function Cart({ isOpen, handleCart }) {
         <div className="flex gap-2 text-sm items-center font-semibold text-[#0f3460]">
           <HiOutlineShoppingBag color="#0f3460" />4 item
         </div>
-        <IoMdClose
-          color="#7d879c"
-          size={23}
-          className="cursor-pointer"
+
+        <button
+          className="hover:bg-[#F3F5F9] rounded-full p-2 cursor-pointer"
           onClick={handleCart}
-        />
+        >
+          <IoMdClose color="#7d879c" size={23} />
+        </button>
       </div>
       <div className="overflow-auto h-full">
         <CartItem />

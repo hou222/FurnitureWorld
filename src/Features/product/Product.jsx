@@ -1,3 +1,6 @@
+import newP from "../../assets/newP.png";
+import plus from "../../assets/plus.png";
+
 function Product({ product, onClick }) {
   return (
     <div
@@ -9,11 +12,7 @@ function Product({ product, onClick }) {
           5% off
         </p>
         {product.newProd && (
-          <img
-            src="src/assets/new.png"
-            alt="new"
-            className="absolute top-0 right-0"
-          />
+          <img src={newP} alt="new" className="absolute top-0 right-0" />
         )}
       </div>
       <img
@@ -32,11 +31,19 @@ function Product({ product, onClick }) {
         <div className="flex justify-between mt-2 items-center">
           <p className="text-green-600 text-sm font-semibold xl:text-base">
             ${product.newPrice}.00{" "}
-            <span className="line-through text-[#7D879C]">
-              ${product.oldPrice}.00
-            </span>
+            {product.oldPrice ? (
+              <span className="line-through text-[#7D879C]">
+                ${product.oldPrice}.00
+              </span>
+            ) : (
+              ""
+            )}
           </p>
-          <div className="w-8 h-8  text-2xl border border-[#4BB4B4]  text-[#4BB4B4] bg-[url('src/assets/plus.png')] bg-no-repeat bg-center "></div>
+          <div
+            className={`w-8 h-8  text-2xl border border-[#4BB4B4]  text-[#4BB4B4] flex justify-center items-center`}
+          >
+            <img src={plus} alt="plus" />
+          </div>
         </div>
       </div>
     </div>

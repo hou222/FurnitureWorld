@@ -5,7 +5,6 @@ import { useContext, useRef } from "react";
 import { MyContext } from "../../MyContext";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 function ProductSlide({ children }) {
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
@@ -45,13 +44,13 @@ function ProductSlide({ children }) {
       {children}
       <div className="slider-container relative">
         <button
-          className="w-8 h-8 xl:w-11 xl:h-11  text rounded-sm  bg-[url('src/assets/leftArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 left-2 my-auto z-10 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300"
+          className={`w-8 h-8 xl:w-11 xl:h-11  text rounded-sm  bg-[url('src/assets/leftArr.png')] bg-no-repeat bg-center bg-white absolute top-0 bottom-0 left-2 my-auto z-10 drop-shadow-md cursor-pointer hover:bg-green-100 duration-300`}
           onClick={() => slider?.current?.slickPrev()}
         ></button>
         <Slider ref={slider} {...settings}>
           {products.map((product, index) =>
             index <= 6 ? (
-              <div key={index}>
+              <div key={index} className="pl-3">
                 <Product
                   product={product}
                   onClick={() => {

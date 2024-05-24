@@ -6,6 +6,7 @@ import ImportantDetails from "./ImportantDetails";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "../MyContext";
 import ProductSlide from "../Features/product/ProductSlide";
+
 function Home() {
   const { setColor } = useContext(MyContext);
   const [slide, setSlide] = useState(0);

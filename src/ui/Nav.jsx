@@ -1,4 +1,5 @@
 import { IoMdClose } from "react-icons/io";
+import downArrow from "../assets/down-arrow.png";
 import List from "./List";
 function Nav({ isOpen, handleOpen }) {
   return (
@@ -17,35 +18,35 @@ function Nav({ isOpen, handleOpen }) {
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>Home</a>
-            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+            <img src={downArrow} className=" w-4 h-4" />
           </div>
           <List />
         </li>
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>Mega Menu</a>
-            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+            <img src={downArrow} className=" w-4 h-4" />
           </div>
           <List />
         </li>
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>Full Screen Menu</a>
-            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+            <img src={downArrow} className=" w-4 h-4" />
           </div>
           <List />
         </li>
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>User Account</a>
-            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+            <img src={downArrow} className=" w-4 h-4" />
           </div>
           <List />
         </li>
         <li className="relative group">
           <div className="flex justify-between items-center gap-2 cursor-pointer hover:text-[#4BB4B4]">
             <a>Vendor Account</a>
-            <img src="src/assets/down-arrow.png" className=" w-4 h-4" />
+            <img src={downArrow} className=" w-4 h-4" />
           </div>
           <List />
         </li>

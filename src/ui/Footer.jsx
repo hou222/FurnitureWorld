@@ -1,9 +1,16 @@
+import market2 from "../assets/market2.png";
+import facebook from "../assets/facebook.png";
+import google from "../assets/google.png";
+import instagram from "../assets/instagram.png";
+import twitter from "../assets/twitter.png";
+import youtube from "../assets/youtube.png";
+
 function Footer() {
   return (
     <footer className="bg-[#222935] py-7 px-4 xl:py-14 xl:px-7 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       <div className="flex flex-col gap-7">
         <div className="flex justify-center items-center w-11 h-11 lg:w-14 lg:h-14 rounded-full border-white border-2">
-          <img src="src/assets/market2.png" alt="logo" />
+          <img src={market2} alt="logo" />
         </div>
         <p className="text-sm text-[#AEB4BE]">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet
@@ -71,35 +78,23 @@ function Footer() {
           <ul className="flex flex-row gap-3 py-4">
             <li className="bg-[#161d2b] p-2 rounded-full">
               <img
-                src="src/assets/facebook.png"
+                src={facebook}
                 alt="facebook"
                 className="w-[12px] h-[12px]"
               />
             </li>
             <li className="bg-[#161d2b] p-2 rounded-full">
-              <img
-                src="src/assets/twitter.png"
-                alt="twitter"
-                className="w-[12px] h-[12px]"
-              />
+              <img src={twitter} alt="twitter" className="w-[12px] h-[12px]" />
+            </li>
+            <li className="bg-[#161d2b] p-2 rounded-full">
+              <img src={youtube} alt="youtube" className="w-[12px] h-[12px]" />
+            </li>
+            <li className="bg-[#161d2b] p-2 rounded-full">
+              <img src={google} alt="google" className="w-[12px] h-[12px]" />
             </li>
             <li className="bg-[#161d2b] p-2 rounded-full">
               <img
-                src="src/assets/youtube.png"
-                alt="youtube"
-                className="w-[12px] h-[12px]"
-              />
-            </li>
-            <li className="bg-[#161d2b] p-2 rounded-full">
-              <img
-                src="src/assets/google.png"
-                alt="google"
-                className="w-[12px] h-[12px]"
-              />
-            </li>
-            <li className="bg-[#161d2b] p-2 rounded-full">
-              <img
-                src="src/assets/instagram.png"
+                src={instagram}
                 alt="instgram"
                 className="w-[12px] h-[12px]"
               />

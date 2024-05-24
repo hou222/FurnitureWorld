@@ -1,7 +1,7 @@
 import { IoIosMenu } from "react-icons/io";
 import { HiOutlineUser } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import SearchBar from "../Features/SearchBar";
+import SearchBar from "../Features/search/SearchBar";
 import { IconContext } from "react-icons";
 import { useContext, useState } from "react";
 import Nav from "./Nav";
@@ -9,6 +9,8 @@ import { MyContext } from "../MyContext";
 import { useNavigate } from "react-router";
 import Logo from "./Logo";
 import Cart from "../Features/cart/Cart";
+import category from "../assets/category.png";
+import rightArr from "../assets/right.png";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,43 +74,41 @@ function HeaderMiddle() {
             </div>
           </div>
           <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
-            <button
-              className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer relative"
-              onClick={handleDropDown}
-            >
-              <div className="flex gap-2">
-                <img src="src/assets/category.png" alt="category" />
-                <p>Categories</p>
-              </div>
+            <div className="relative z-20">
+              <button
+                className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer "
+                onClick={handleDropDown}
+              >
+                <div className="flex gap-2">
+                  <img src={category} alt="category" />
+                  <p>Categories</p>
+                </div>
 
-              <img
-                src="src/assets/right.png"
-                alt="right-arrow"
-                className="w-3 h-3"
-              />
+                <img src={rightArr} alt="right-arrow" className="w-3 h-3" />
+              </button>
               <ul
-                className={`border bg-[#F3F5F9] w-[200px] absolute top-8  left-0 rounded-sm ${
-                  isOpen1 && "hidden"
+                className={`border bg-white w-[200px] absolute top-8  left-0 rounded-sm ${
+                  !isOpen1 && "hidden"
                 }`}
               >
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-300">
-                  <img src="src/assets/category.png" alt="" />
+                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  <img src={category} alt="category" />
                   <p>Bikes</p>
                 </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-300">
-                  <img src="src/assets/category.png" alt="" />
+                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  <img src={category} alt="category" />
                   <p>Electronics</p>
                 </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-300">
-                  <img src="src/assets/category.png" alt="" />
+                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  <img src={category} alt="category" />
                   <p>Books</p>
                 </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-300">
-                  <img src="src/assets/category.png" alt="" />
+                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  <img src={category} alt="category" />
                   <p>Games</p>
                 </li>
               </ul>
-            </button>
+            </div>
             <Nav isOpen={isOpen} handleOpen={handleNav} />
             <Cart isOpen={cartOpen} handleCart={handleCart} />
           </div>

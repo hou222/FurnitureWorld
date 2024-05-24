@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MyContext } from "../../MyContext";
+import chair1 from "../../assets/chair1.png";
 function CartItem() {
   const { color } = useContext(MyContext);
   return (
@@ -21,11 +22,7 @@ function CartItem() {
             -
           </button>
         </div>
-        <img
-          src="src/assets/chair1.png"
-          alt="product photo"
-          className="w-16 h-16"
-        />
+        <img src={chair1} alt="product photo" className="w-16 h-16" />
         <div className="flex flex-col items-start gap-1">
           <p className="font-semibold text-sm">Comfortable Sofa</p>
           <p className="text-xs text-gray-400">$150.00 x 2</p>
@@ -38,7 +35,10 @@ function CartItem() {
           </p>
         </div>
       </div>
-      <IoMdClose color="#7d879c" size={20} className="cursor-pointer" />
+
+      <button className="hover:bg-[#F3F5F9] rounded-full p-1 cursor-pointer">
+        <IoMdClose color="#7d879c" size={20} />
+      </button>
     </div>
   );
 }
