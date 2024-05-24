@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import Rating from "../cart/Rating";
 import { MyContext } from "../../MyContext";
 import { useParams } from "react-router";
+import ProductPageImage from "./ProductPageImage";
 
 function ProductPage() {
   const { setColor, products } = useContext(MyContext);
@@ -18,37 +19,7 @@ function ProductPage() {
   return (
     <div className="bg-[#F6F9FC]">
       <div className="max-w-screen-xl mx-auto flex flex-col  ll:flex-row ll:gap-[30px] p-3 ll:py-10">
-        <div className="flex justify-center items-center flex-col p-2">
-          <img
-            src={selectedProduct[0].image}
-            alt="product"
-            className="w-80 h-80 ll:w-[550px] ll:h-[550px]"
-          />
-
-          <div className="flex justify-center items-center gap-2 py-3">
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl border-red-500">
-              <img
-                src={selectedProduct[0].image}
-                alt="product"
-                className="w-10 h-10 "
-              />
-            </div>
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
-              <img
-                src={selectedProduct[0].image}
-                alt="product"
-                className="w-10 h-10"
-              />
-            </div>
-            <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
-              <img
-                src={selectedProduct[0].image}
-                alt="product"
-                className="w-10 h-10"
-              />
-            </div>
-          </div>
-        </div>
+        <ProductPageImage image={selectedProduct[0].image} />
 
         {/* //////////////////////////////////////////////////////////////////////////// */}
         <div className="flex flex-col gap-3 items-start ">

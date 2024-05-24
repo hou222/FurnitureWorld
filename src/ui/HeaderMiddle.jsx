@@ -35,77 +35,84 @@ function HeaderMiddle() {
       : (document.body.style.overflow = "hidden");
   }
   return (
-    <div className=" text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0">
-      <IconContext.Provider
-        value={{ size: "23", color: "#7d879c", className: "cursor-pointer" }}
-      >
-        <div className=" max-w-screen-xl mx-auto  ">
-          <div className="flex justify-center items-center relative">
-            <button className="z-1 lg:hidden bg-blue-500" onClick={handleNav}>
-              <IoIosMenu className="absolute top-4  left-6" />
-            </button>
-            {/* <Nav isOpen={isOpen} handleOpen={handleOpen} /> */}
-            <div className="flex flex-col justify-center items-center gap-5 ">
-              <Logo
-                onClick={() => {
-                  navigate("/home");
-                }}
-              />
-              <SearchBar />
-            </div>
-            <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
-              <button className="hover:bg-[#F3F5F9] rounded-full p-2">
-                <HiOutlineUser />
+    <div className="">
+      <div className=" text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0 ">
+        <IconContext.Provider
+          value={{ size: "23", color: "#7d879c", className: "cursor-pointer" }}
+        >
+          <div className=" max-w-screen-xl mx-auto  ">
+            <div className="flex justify-center items-center relative ">
+              <button className="z-1 lg:hidden bg-blue-500" onClick={handleNav}>
+                <IoIosMenu className="absolute top-4  left-6" />
               </button>
-              <button
-                className="hover:bg-[#F3F5F9] rounded-full p-2"
-                onClick={handleCart}
-              >
-                <HiOutlineShoppingBag />
-              </button>
+              {/* <Nav isOpen={isOpen} handleOpen={handleOpen} /> */}
+              <div className="flex flex-col justify-center items-center gap-5 ">
+                <Logo
+                  onClick={() => {
+                    navigate("/home");
+                  }}
+                />
+                <SearchBar />
+              </div>
+              <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
+                <button className="hover:bg-[#F3F5F9] rounded-full p-2">
+                  <HiOutlineUser />
+                </button>
+                <button
+                  className="hover:bg-[#F3F5F9] rounded-full p-2"
+                  onClick={handleCart}
+                >
+                  <HiOutlineShoppingBag />
+                </button>
 
-              <p
-                className={`w-5 h-5 bg-[${
-                  color ? "#4BB4B4" : "#d23f57"
-                }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
-              >
-                3
-              </p>
+                <p
+                  className={`w-5 h-5 bg-[${
+                    color ? "#4BB4B4" : "#d23f57"
+                  }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
+                >
+                  3
+                </p>
+              </div>
             </div>
-          </div>
-          <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
-            <div className="relative z-20">
-              <button
-                className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer "
-                onClick={handleDropDown}
-              >
-                <div className="flex gap-2">
-                  <img src={category} alt="category" />
-                  <p>Categories</p>
-                </div>
+            <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
+              <div className="relative z-20">
+                <button
+                  className="hidden lg:w-[200px] border rounded-sm drop-shadow-xl bg-[#F3F5F9] lg:flex lg:gap-2 lg:items-center lg:justify-between px-2 py-1 cursor-pointer "
+                  onClick={handleDropDown}
+                >
+                  <div className="flex gap-2">
+                    <img src={category} alt="category" />
+                    <p>Categories</p>
+                  </div>
 
-                <img src={rightArr} alt="right-arrow" className="w-3 h-3" />
-              </button>
-              <ul
-                className={`border bg-white w-[200px] absolute top-8  left-0 rounded-sm ${
-                  !isOpen1 && "hidden"
+                  <img src={rightArr} alt="right-arrow" className="w-3 h-3" />
+                </button>
+                <ul
+                  className={`border bg-white w-[200px] absolute top-8  left-0 rounded-sm ${
+                    !isOpen1 && "hidden"
+                  }`}
+                >
+                  <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                    <img src={category} alt="category" />
+                    <p>Top New Product</p>
+                  </li>
+                  <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                    <img src={category} alt="category" />
+                    <p>Top Selling Product</p>
+                  </li>
+                </ul>
+              </div>
+              <Nav isOpen={isOpen} handleOpen={handleNav} />
+              <Cart isOpen={cartOpen} handleCart={handleCart} />
+              <div
+                className={`absolute z-40 top-0 left-0 right-0 bottom-0 sm:bg-[#00000094] duration-300 ${
+                  cartOpen ? "visible opacity-100" : "invisible opacity-0"
                 }`}
-              >
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
-                  <img src={category} alt="category" />
-                  <p>Top New Product</p>
-                </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
-                  <img src={category} alt="category" />
-                  <p>Top Selling Product</p>
-                </li>
-              </ul>
+              ></div>
             </div>
-            <Nav isOpen={isOpen} handleOpen={handleNav} />
-            <Cart isOpen={cartOpen} handleCart={handleCart} />
           </div>
-        </div>
-      </IconContext.Provider>
+        </IconContext.Provider>
+      </div>
     </div>
   );
 }

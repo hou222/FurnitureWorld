@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Product from "./Product";
 import { MyContext } from "../../MyContext";
 import { useNavigate } from "react-router";
-function Products({ children }) {
+function Products({ children, ref }) {
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
 

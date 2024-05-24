@@ -28,7 +28,7 @@ function Search() {
             key={index}
             product={product}
             onClick={() => {
-              navigate("/product");
+              navigate(`/product/${product.id}`);
             }}
           />
         ))}

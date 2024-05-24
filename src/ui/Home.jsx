@@ -10,9 +10,19 @@ import ProductSlide from "../Features/product/ProductSlide";
 function Home() {
   const { setColor } = useContext(MyContext);
   const [slide, setSlide] = useState(0);
+  const myRef = useRef(null);
+
   useEffect(() => {
     setColor(true);
   }, [setColor]);
+  /* function handlerScroll() {
+    myRef.current.scrollIntoview();
+  } */
+  const handlerScroll = () =>
+    myRef.current.scrollIntoView({ behavior: "smooth" });
+  /* function handlerScroll() {
+    document.getElementById("22").scrollIntoView({ behavior: "smooth" });
+  } */
   const slideImages = [
     {
       url: "src/assets/bg-furniture.jpg",
@@ -42,7 +52,7 @@ function Home() {
       <div className="relative">
         <Slider ref={slider} {...settings}>
           {slideImages.map((image, index) => (
-            <SlideDetails key={index} />
+            <SlideDetails key={index} handlerScroll={handlerScroll} />
           ))}
         </Slider>
         <div className=" absolute bottom-0  left-0 right-0 flex justify-center items-center gap-2 py-7">
@@ -72,8 +82,17 @@ function Home() {
         </p>
       </ProductSlide>
 
+      <ProductSlide>
+        <h1 className="font-semibold text-3xl mb-3">Top Selling Product</h1>
+        <p className="text-[#7D879C] text-sm mb-8">
+          Tall blind but were, been floks not the expand
+        </p>
+      </ProductSlide>
+
       <Products>
-        <h1 className="font-semibold text-3xl mb-3">All Product</h1>
+        <h1 className="font-semibold text-3xl mb-3" ref={myRef}>
+          All Product
+        </h1>
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>

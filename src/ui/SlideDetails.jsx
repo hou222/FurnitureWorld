@@ -1,5 +1,5 @@
 import furniture from "../assets/bg-furniture.jpg";
-function SlideDetails() {
+function SlideDetails({ handlerScroll }) {
   return (
     <div
       style={{ "--furniture": `url(${furniture})` }}
@@ -15,7 +15,10 @@ function SlideDetails() {
         of {"wasn't"} designer the her thought. Enterprises flows fimls it a fly
         the of {"wasn't"} designer.
       </p>
-      <button className="bg-[#4BB4B4] text-white px-6 py-2 mt-5">
+      <button
+        className="bg-[#4BB4B4] text-white px-6 py-2 mt-5"
+        onClick={handlerScroll}
+      >
         Shop Now
       </button>
       {/* <div className="bg-red-600 w-full flex justify-center gap-2 p-3 absolute bottom-0">

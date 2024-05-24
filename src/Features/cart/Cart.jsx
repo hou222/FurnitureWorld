@@ -9,7 +9,7 @@ function Cart({ isOpen, handleCart }) {
   document.body.style.overflowX = "hidden";
   return (
     <div
-      className={`flex flex-col justify-between transition-all  duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-10 ${
+      className={`flex flex-col justify-between transition-all  duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-50 ${
         isOpen
           ? "right-0"
           : "-right-full sm:-right-2/3 md:-right-1/2 lg:-right-1/4"
