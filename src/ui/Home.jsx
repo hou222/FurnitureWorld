@@ -39,7 +39,7 @@ function Home() {
   }
   return (
     <div className="max-w-screen-xl mx-auto ">
-      <div className="bg-red-500 relative">
+      <div className="relative">
         <Slider ref={slider} {...settings}>
           {slideImages.map((image, index) => (
             <SlideDetails key={index} />

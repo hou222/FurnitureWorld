@@ -1,18 +1,26 @@
 import { useContext, useEffect } from "react";
 import Rating from "../cart/Rating";
 import { MyContext } from "../../MyContext";
+import { useParams } from "react-router";
 
 function ProductPage() {
-  const { setColor } = useContext(MyContext);
+  const { setColor, products } = useContext(MyContext);
+  const { id } = useParams();
   useEffect(() => {
     setColor(false);
   }, [setColor]);
+
+  const selectedProduct = products.filter((product) => {
+    if (product.id.toString() === id) return product;
+  });
+  console.log(selectedProduct);
+
   return (
     <div className="bg-[#F6F9FC]">
       <div className="max-w-screen-xl mx-auto flex flex-col  ll:flex-row ll:gap-[30px] p-3 ll:py-10">
         <div className="flex justify-center items-center flex-col p-2">
           <img
-            src={`src/assets/chair5.png`}
+            src={selectedProduct[0].image}
             alt="product"
             className="w-80 h-80 ll:w-[550px] ll:h-[550px]"
           />
@@ -20,21 +28,21 @@ function ProductPage() {
           <div className="flex justify-center items-center gap-2 py-3">
             <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl border-red-500">
               <img
-                src="src/assets/chair5.png"
+                src={selectedProduct[0].image}
                 alt="product"
                 className="w-10 h-10 "
               />
             </div>
             <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
               <img
-                src="src/assets/chair5.png"
+                src={selectedProduct[0].image}
                 alt="product"
                 className="w-10 h-10"
               />
             </div>
             <div className="w-14 h-14 flex border justify-center items-center bg-white rounded-xl">
               <img
-                src="src/assets/chair5.png"
+                src={selectedProduct[0].image}
                 alt="product"
                 className="w-10 h-10"
               />
@@ -44,7 +52,9 @@ function ProductPage() {
 
         {/* //////////////////////////////////////////////////////////////////////////// */}
         <div className="flex flex-col gap-3 items-start ">
-          <p className="text-3xl font-bold ll:text-4xl ">Grey Sofa</p>
+          <p className="text-3xl font-bold ll:text-4xl ">
+            {selectedProduct[0].nameP}
+          </p>
           <p className="text-sm ll:text-base">
             Brand:<span className="font-semibold">Xiaomi</span>
           </p>
@@ -86,7 +96,7 @@ function ProductPage() {
           </div>
           <div className="py-2 flex flex-col gap-1">
             <p className="text-[#d23f57] font-bold text-2xl ll:text-3xl">
-              $200.00
+              ${selectedProduct[0].newPrice}.00
             </p>
             <p className="text-sm ll:text-base">Stock Available</p>
           </div>

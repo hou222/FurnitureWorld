@@ -93,19 +93,11 @@ function HeaderMiddle() {
               >
                 <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
                   <img src={category} alt="category" />
-                  <p>Bikes</p>
+                  <p>Top New Product</p>
                 </li>
                 <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
                   <img src={category} alt="category" />
-                  <p>Electronics</p>
-                </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
-                  <img src={category} alt="category" />
-                  <p>Books</p>
-                </li>
-                <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
-                  <img src={category} alt="category" />
-                  <p>Games</p>
+                  <p>Top Selling Product</p>
                 </li>
               </ul>
             </div>

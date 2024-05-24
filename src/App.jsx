@@ -22,7 +22,7 @@ import chair14 from "./assets/chair14.png";
 function App() {
   const products = [
     {
-      id: 205454,
+      id: 1,
       image: chair1,
       nameP: "Study Gold Chair",
       newPrice: 138.0,
@@ -30,7 +30,7 @@ function App() {
       newProd: true,
     },
     {
-      id: 205454,
+      id: 2,
       image: chair4,
       nameP: "Study Chair",
       newPrice: 138.0,
@@ -38,7 +38,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 3,
       image: chair5,
       nameP: "Grey Sofa",
       newPrice: 120.0,
@@ -46,7 +46,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 4,
       image: chair6,
       nameP: "Comfortable Sofa",
       newPrice: 131.0,
@@ -54,7 +54,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 5,
       image: chair7,
       nameP: "Arm Sofa",
       newPrice: 126.0,
@@ -62,7 +62,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 6,
       image: chair8,
       nameP: "Brown Sofa",
       newPrice: 118.0,
@@ -70,7 +70,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 7,
       image: chair9,
       nameP: "Black Sofa",
       newPrice: 110.0,
@@ -78,7 +78,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 8,
       image: chair10,
       nameP: "Green Couch",
       newPrice: 129.0,
@@ -86,7 +86,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 9,
       image: chair11,
       nameP: "Blue Couch",
       newPrice: 170.0,
@@ -94,7 +94,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 10,
       image: chair12,
       nameP: "Blue Couch Chair",
       newPrice: 100.0,
@@ -102,7 +102,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 11,
       image: chair13,
       nameP: "Brown Chair",
       newPrice: 151.0,
@@ -110,7 +110,7 @@ function App() {
       newProd: false,
     },
     {
-      id: 205754,
+      id: 13,
       image: chair14,
       nameP: "Orange sofa",
       newPrice: 190.0,
@@ -129,7 +129,7 @@ function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Navigate replace to="home" />} />
               <Route path="home" element={<Home />} />
-              <Route path="product" element={<ProductPage />} />
+              <Route path="product/:id" element={<ProductPage />} />
               <Route path="search/:query" element={<Search />} />
             </Route>
           </Routes>

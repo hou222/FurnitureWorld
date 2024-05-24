@@ -7,7 +7,7 @@ function Products({ children }) {
   const navigate = useNavigate();
 
   return (
-    <div className="px-3 py-6">
+    <div className="px-3 lg:px-0 py-6">
       {children}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 ll:grid-cols-3">
         {products.map((product, index) => (
@@ -15,7 +15,8 @@ function Products({ children }) {
             key={index}
             product={product}
             onClick={() => {
-              navigate("/product");
+              navigate(`/product/${product.id}`);
+              //navigate(`/product`);
             }}
           />
         ))}
