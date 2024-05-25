@@ -18,8 +18,11 @@ import chair11 from "./assets/chair11.png";
 import chair12 from "./assets/chair12.png";
 import chair13 from "./assets/chair13.png";
 import chair14 from "./assets/chair14.png";
+import NewProduct from "./Features/category/NewProduct";
+import TopSell from "./Features/category/TopSell";
 
 function App() {
+  const [cart, setCart] = useState();
   const products = [
     {
       id: 1,
@@ -27,7 +30,7 @@ function App() {
       nameP: "Study Gold Chair",
       newPrice: 138.0,
       oldPrice: 0,
-      newProd: true,
+      newProd: false,
     },
     {
       id: 2,
@@ -43,7 +46,7 @@ function App() {
       nameP: "Grey Sofa",
       newPrice: 120.0,
       oldPrice: 150.0,
-      newProd: false,
+      newProd: true,
     },
     {
       id: 4,
@@ -59,7 +62,7 @@ function App() {
       nameP: "Arm Sofa",
       newPrice: 126.0,
       oldPrice: 0,
-      newProd: false,
+      newProd: true,
     },
     {
       id: 6,
@@ -91,7 +94,7 @@ function App() {
       nameP: "Blue Couch",
       newPrice: 170.0,
       oldPrice: 186.0,
-      newProd: false,
+      newProd: true,
     },
     {
       id: 10,
@@ -99,7 +102,7 @@ function App() {
       nameP: "Blue Couch Chair",
       newPrice: 100.0,
       oldPrice: 0,
-      newProd: false,
+      newProd: true,
     },
     {
       id: 11,
@@ -107,7 +110,7 @@ function App() {
       nameP: "Brown Chair",
       newPrice: 151.0,
       oldPrice: 170.0,
-      newProd: false,
+      newProd: true,
     },
     {
       id: 13,
@@ -115,14 +118,14 @@ function App() {
       nameP: "Orange sofa",
       newPrice: 190.0,
       oldPrice: 0,
-      newProd: false,
+      newProd: true,
     },
   ];
   const [color, setColor] = useState(true);
   //const [searchInput, setSearchInput] = useState("");
   return (
     <div>
-      <MyContext.Provider value={{ color, setColor, products }}>
+      <MyContext.Provider value={{ color, setColor, products, cart, setCart }}>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -131,6 +134,8 @@ function App() {
               <Route path="home" element={<Home />} />
               <Route path="product/:id" element={<ProductPage />} />
               <Route path="search/:query" element={<Search />} />
+              <Route path="/category/top" element={<TopSell />} />
+              <Route path="/category/new" element={<NewProduct />} />
             </Route>
           </Routes>
         </BrowserRouter>

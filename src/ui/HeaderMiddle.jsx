@@ -11,6 +11,7 @@ import Logo from "./Logo";
 import Cart from "../Features/cart/Cart";
 import category from "../assets/category.png";
 import rightArr from "../assets/right.png";
+import { NavLink } from "react-router-dom";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
@@ -92,14 +93,22 @@ function HeaderMiddle() {
                     !isOpen1 && "hidden"
                   }`}
                 >
-                  <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  <NavLink
+                    to="/category/new"
+                    className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]"
+                    onClick={handleDropDown}
+                  >
                     <img src={category} alt="category" />
                     <p>Top New Product</p>
-                  </li>
-                  <li className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]">
+                  </NavLink>
+                  <NavLink
+                    to="/category/top"
+                    className="flex gap-2 px-3 py-2  hover:bg-slate-50 hover:cursor-pointer hover:text-[#4BB4B4]"
+                    onClick={handleDropDown}
+                  >
                     <img src={category} alt="category" />
                     <p>Top Selling Product</p>
-                  </li>
+                  </NavLink>
                 </ul>
               </div>
               <Nav isOpen={isOpen} handleOpen={handleNav} />

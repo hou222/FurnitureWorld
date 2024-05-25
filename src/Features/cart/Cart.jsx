@@ -6,6 +6,7 @@ import { MyContext } from "../../MyContext";
 
 function Cart({ isOpen, handleCart }) {
   const { color } = useContext(MyContext);
+
   document.body.style.overflowX = "hidden";
   return (
     <div

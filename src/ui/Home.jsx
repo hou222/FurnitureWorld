@@ -75,15 +75,15 @@ function Home() {
       </div>
       <ImportantDetails />
 
-      <ProductSlide>
-        <h1 className="font-semibold text-3xl mb-3">Top New Product</h1>
+      <ProductSlide newP={false}>
+        <h1 className="font-semibold text-3xl mb-3">Top Selling Product</h1>
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>
       </ProductSlide>
 
-      <ProductSlide>
-        <h1 className="font-semibold text-3xl mb-3">Top Selling Product</h1>
+      <ProductSlide newP={true}>
+        <h1 className="font-semibold text-3xl mb-3">Top New Product</h1>
         <p className="text-[#7D879C] text-sm mb-8">
           Tall blind but were, been floks not the expand
         </p>

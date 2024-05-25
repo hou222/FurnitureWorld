@@ -16,7 +16,7 @@ function SlideDetails({ handlerScroll }) {
         the of {"wasn't"} designer.
       </p>
       <button
-        className="bg-[#4BB4B4] text-white px-6 py-2 mt-5"
+        className="bg-[#4BB4B4] hover:bg-[#3e9292] duration-300 text-white px-6 py-2 mt-5"
         onClick={handlerScroll}
       >
         Shop Now

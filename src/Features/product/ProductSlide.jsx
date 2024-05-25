@@ -7,12 +7,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import leftArr from "../../assets/leftArr.png";
 import rightArr from "../../assets/rightArr.png";
-function ProductSlide({ children }) {
+function ProductSlide({ children, newP }) {
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
 
   const slider = useRef(null);
 
+  const filtredNew = products.filter((product) => {
+    if (product.newProd) return product;
+  });
+  //console.log(filtredNew);
   const settings = {
     dots: false,
     infinite: true,
@@ -51,20 +55,31 @@ function ProductSlide({ children }) {
           onClick={() => slider?.current?.slickPrev()}
         ></button>
         <Slider ref={slider} {...settings}>
-          {products.map((product, index) =>
-            index <= 6 ? (
-              <div key={index} className="px-[6px]">
-                <Product
-                  product={product}
-                  onClick={() => {
-                    navigate(`/product/${product.id}`);
-                  }}
-                />
-              </div>
-            ) : (
-              ""
-            )
-          )}
+          {newP
+            ? filtredNew.map((product) => (
+                <div className="px-[6px]" key={product.id}>
+                  <Product
+                    product={product}
+                    onClick={() => {
+                      navigate(`/product/${product.id}`);
+                    }}
+                  />
+                </div>
+              ))
+            : products.map((product, index) =>
+                index <= 6 ? (
+                  <div key={product.id} className="px-[6px]">
+                    <Product
+                      product={product}
+                      onClick={() => {
+                        navigate(`/product/${product.id}`);
+                      }}
+                    />
+                  </div>
+                ) : (
+                  ""
+                )
+              )}
         </Slider>
         <button
           style={{ "--right-arrow": `url(${rightArr})` }}

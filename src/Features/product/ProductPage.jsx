@@ -21,7 +21,6 @@ function ProductPage() {
       <div className="max-w-screen-xl mx-auto flex flex-col  ll:flex-row ll:gap-[30px] p-3 ll:py-10">
         <ProductPageImage image={selectedProduct[0].image} />
 
-        {/* //////////////////////////////////////////////////////////////////////////// */}
         <div className="flex flex-col gap-3 items-start ">
           <p className="text-3xl font-bold ll:text-4xl ">
             {selectedProduct[0].nameP}
