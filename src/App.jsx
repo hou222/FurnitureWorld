@@ -22,7 +22,6 @@ import NewProduct from "./Features/category/NewProduct";
 import TopSell from "./Features/category/TopSell";
 
 function App() {
-  const [cart, setCart] = useState();
   const products = [
     {
       id: 1,
@@ -157,11 +156,28 @@ function App() {
       newProd: true,
     },
   ];
+  const [cartProducts, setCartProducts] = useState([
+    /* {
+      product: {
+        id: 30,
+      },
+      quantity: 2,
+    }, */
+  ]);
+
   const [color, setColor] = useState(true);
   //const [searchInput, setSearchInput] = useState("");
   return (
     <div>
-      <MyContext.Provider value={{ color, setColor, products, cart, setCart }}>
+      <MyContext.Provider
+        value={{
+          color,
+          setColor,
+          products,
+          cartProducts,
+          setCartProducts,
+        }}
+      >
         <BrowserRouter>
           <ScrollToTop />
           <Routes>

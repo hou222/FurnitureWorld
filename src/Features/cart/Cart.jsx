@@ -5,8 +5,8 @@ import { useContext } from "react";
 import { MyContext } from "../../MyContext";
 
 function Cart({ isOpen, handleCart }) {
-  const { color } = useContext(MyContext);
-
+  const { color, cartProducts } = useContext(MyContext);
+  //console.log(cartProducts);
   document.body.style.overflowX = "hidden";
   return (
     <div
@@ -29,7 +29,9 @@ function Cart({ isOpen, handleCart }) {
         </button>
       </div>
       <div className="overflow-auto h-full">
-        <CartItem />
+        {cartProducts.map((item) => (
+          <CartItem key={item.product.id} item={item} />
+        ))}
       </div>
 
       <div className=" px-6 py-6 flex flex-col gap-2">

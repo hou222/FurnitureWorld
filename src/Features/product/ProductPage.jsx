@@ -7,7 +7,8 @@ import ProductOption from "./ProductOption";
 import ProductType from "./ProductType";
 
 function ProductPage() {
-  const { setColor, products } = useContext(MyContext);
+  const { setColor, products, setCartProducts, cartProducts } =
+    useContext(MyContext);
   const { id } = useParams();
   useEffect(() => {
     setColor(false);
@@ -16,7 +17,24 @@ function ProductPage() {
   const selectedProduct = products.filter((product) => {
     if (product.id.toString() === id) return product;
   });
-  console.log(selectedProduct);
+  //console.log(selectedProduct);
+
+  const addProductToCartFunction = (prod) => {
+    const alreadyProduct = cartProducts.find(
+      (item) => item.product.id === prod.id
+    );
+
+    if (alreadyProduct) {
+      const latestProductUpdate = cartProducts.map((item) =>
+        item.product.id === prod.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+      setCartProducts(latestProductUpdate);
+    } else {
+      setCartProducts([...cartProducts, { product: prod, quantity: 1 }]);
+    }
+  };
 
   return (
     <div className="bg-[#F6F9FC]">
@@ -45,7 +63,10 @@ function ProductPage() {
             </p>
             <p className="text-sm ll:text-base">Stock Available</p>
           </div>
-          <button className="text-white bg-[#d23f57] py-2 px-7 rounded-md font-semibold text-sm ll:text-base ll:py-3 ll:px-9">
+          <button
+            className="text-white bg-[#d23f57] py-2 px-7 rounded-md font-semibold text-sm ll:text-base ll:py-3 ll:px-9"
+            onClick={() => addProductToCartFunction(selectedProduct[0])}
+          >
             Add To Cart
           </button>
         </div>
