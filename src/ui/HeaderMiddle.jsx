@@ -12,12 +12,13 @@ import Cart from "../Features/cart/Cart";
 import category from "../assets/category.png";
 import rightArr from "../assets/right.png";
 import { NavLink } from "react-router-dom";
+import Product from "../Features/product/Product";
 
 function HeaderMiddle() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
-  const { color } = useContext(MyContext);
+  const { color, cartProducts } = useContext(MyContext);
   const navigate = useNavigate();
 
   function handleNav() {
@@ -66,13 +67,15 @@ function HeaderMiddle() {
                   <HiOutlineShoppingBag />
                 </button>
 
-                <p
-                  className={`w-5 h-5 bg-[${
-                    color ? "#4BB4B4" : "#d23f57"
-                  }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
-                >
-                  3
-                </p>
+                {cartProducts.length > 0 && (
+                  <p
+                    className={`w-5 h-5 bg-[${
+                      color ? "#4BB4B4" : "#d23f57"
+                    }] rounded-full text-center text-[13px] text-white font-semibold absolute top-0 -right-2`}
+                  >
+                    {cartProducts.length}
+                  </p>
+                )}
               </div>
             </div>
             <div className=" lg:flex lg:justify-between lg:items-center lg:mt-7">
