@@ -30,7 +30,7 @@ function App() {
       brand: "Angie Sofa",
       rating: 3,
       reaction: 16,
-      newPrice: 138.0,
+      newPrice: 138,
       oldPrice: 0,
       newProd: false,
     },
@@ -41,8 +41,8 @@ function App() {
       brand: "Maiden Home",
       rating: 4,
       reaction: 25,
-      newPrice: 138.0,
-      oldPrice: 146.0,
+      newPrice: 138,
+      oldPrice: 146,
       newProd: false,
     },
     {
@@ -52,8 +52,8 @@ function App() {
       brand: "interior Define",
       rating: 5,
       reaction: 9,
-      newPrice: 120.0,
-      oldPrice: 150.0,
+      newPrice: 120,
+      oldPrice: 150,
       newProd: true,
     },
     {
@@ -63,8 +63,8 @@ function App() {
       brand: "Angie Sofa",
       rating: 3,
       reaction: 38,
-      newPrice: 131.0,
-      oldPrice: 1450.0,
+      newPrice: 131,
+      oldPrice: 1450,
       newProd: false,
     },
     {
@@ -74,7 +74,7 @@ function App() {
       brand: "interior Define",
       rating: 3,
       reaction: 5,
-      newPrice: 126.0,
+      newPrice: 126,
       oldPrice: 0,
       newProd: true,
     },
@@ -85,8 +85,8 @@ function App() {
       brand: "Joybird",
       rating: 5,
       reaction: 11,
-      newPrice: 118.0,
-      oldPrice: 130.0,
+      newPrice: 118,
+      oldPrice: 130,
       newProd: false,
     },
     {
@@ -96,8 +96,8 @@ function App() {
       brand: "Maiden Home",
       rating: 3,
       reaction: 7,
-      newPrice: 110.0,
-      oldPrice: 123.0,
+      newPrice: 110,
+      oldPrice: 123,
       newProd: false,
     },
     {
@@ -107,7 +107,7 @@ function App() {
       brand: "Angie Sofa",
       rating: 4,
       reaction: 32,
-      newPrice: 129.0,
+      newPrice: 129,
       oldPrice: 0,
       newProd: false,
     },
@@ -118,8 +118,8 @@ function App() {
       brand: "Maiden Home",
       rating: 3,
       reaction: 18,
-      newPrice: 170.0,
-      oldPrice: 186.0,
+      newPrice: 170,
+      oldPrice: 186,
       newProd: true,
     },
     {
@@ -129,7 +129,7 @@ function App() {
       brand: "interior Define",
       rating: 4,
       reaction: 8,
-      newPrice: 100.0,
+      newPrice: 100,
       oldPrice: 0,
       newProd: true,
     },
@@ -140,8 +140,8 @@ function App() {
       brand: "Joybird",
       rating: 3,
       reaction: 5,
-      newPrice: 151.0,
-      oldPrice: 170.0,
+      newPrice: 151,
+      oldPrice: 170,
       newProd: true,
     },
     {
@@ -151,19 +151,34 @@ function App() {
       brand: "Angie Sofa",
       rating: 4,
       reaction: 9,
-      newPrice: 190.0,
+      newPrice: 190,
       oldPrice: 0,
       newProd: true,
     },
   ];
-  const [cartProducts, setCartProducts] = useState([
-    /* {
-      product: {
-        id: 30,
-      },
-      quantity: 2,
-    }, */
-  ]);
+  const [cartProducts, setCartProducts] = useState([]);
+
+  function increaseQunatity(item) {
+    const increasedQuantity = cartProducts.map((product) =>
+      product.product.id === item.product.id
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setCartProducts(increasedQuantity);
+  }
+
+  function decreaseQunatity(item) {
+    const decreasedQuantity = cartProducts.map((product) =>
+      product.product.id === item.product.id
+        ? {
+            ...product,
+            quantity:
+              product.quantity > 0 ? product.quantity - 1 : product.quantity,
+          }
+        : product
+    );
+    setCartProducts(decreasedQuantity);
+  }
 
   const [color, setColor] = useState(true);
   //const [searchInput, setSearchInput] = useState("");
@@ -176,6 +191,8 @@ function App() {
           products,
           cartProducts,
           setCartProducts,
+          increaseQunatity,
+          decreaseQunatity,
         }}
       >
         <BrowserRouter>

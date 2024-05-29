@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Rating from "../cart/Rating";
 import { MyContext } from "../../MyContext";
 import { useParams } from "react-router";
@@ -10,6 +10,7 @@ function ProductPage() {
   const { setColor, products, setCartProducts, cartProducts } =
     useContext(MyContext);
   const { id } = useParams();
+  const [last] = useState();
   useEffect(() => {
     setColor(false);
   }, [setColor]);
@@ -35,6 +36,12 @@ function ProductPage() {
       setCartProducts([...cartProducts, { product: prod, quantity: 1 }]);
     }
   };
+
+  function findItem() {
+    return cartProducts.find(
+      (item) => selectedProduct[0].id === item.product.id
+    );
+  }
 
   return (
     <div className="bg-[#F6F9FC]">
@@ -63,12 +70,28 @@ function ProductPage() {
             </p>
             <p className="text-sm ll:text-base">Stock Available</p>
           </div>
-          <button
-            className="text-white bg-[#d23f57] py-2 px-7 rounded-md font-semibold text-sm ll:text-base ll:py-3 ll:px-9"
-            onClick={() => addProductToCartFunction(selectedProduct[0])}
-          >
-            Add To Cart
-          </button>
+          {!findItem() ? (
+            <button
+              className="text-white bg-[#d23f57] py-2 px-7 rounded-md font-semibold text-sm ll:text-base ll:py-3 ll:px-9"
+              onClick={() => addProductToCartFunction(selectedProduct[0])}
+            >
+              Add To Cart
+            </button>
+          ) : (
+            <div className="flex">
+              <button className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md ">
+                +
+              </button>
+              <p className="px-4 flex justify-center items-center ">
+                {cartProducts.map((item) =>
+                  selectedProduct[0].id === item.product.id ? item.quantity : 0
+                )}
+              </p>
+              <button className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md ">
+                -
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

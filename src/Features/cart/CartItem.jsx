@@ -1,9 +1,47 @@
 import { useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MyContext } from "../../MyContext";
-import chair1 from "../../assets/chair1.png";
 function CartItem({ item }) {
-  const { color } = useContext(MyContext);
+  const {
+    color,
+    setCartProducts,
+    cartProducts,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useContext(MyContext);
+
+  /* function increaseQunatity() {
+    const increasedQuantity = cartProducts.map((product) =>
+      product.product.id === item.product.id
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setCartProducts(increasedQuantity);
+  } */
+  /* function decreaseQunatity() {
+    const decreasedQuantity = cartProducts.map((product) =>
+      product.product.id === item.product.id
+        ? {
+            ...product,
+            quantity:
+              product.quantity > 0 ? product.quantity - 1 : product.quantity,
+          }
+        : product
+    );
+    setCartProducts(decreasedQuantity);
+  } */
+
+  function deleteItem() {
+    const updateCart = cartProducts.filter(
+      (product) => product.product.id !== item.product.id
+    );
+
+    setCartProducts(updateCart);
+  }
+
+  function handleItemQuantityPrice() {
+    return item.product.newPrice * item.quantity;
+  }
   return (
     <div className="flex justify-between items-center px-6 py-4 border-t">
       <div className="flex gap-3 justify-start items-center">
@@ -14,11 +52,15 @@ function CartItem({ item }) {
             }] text-[${
               color ? "#4BB4B4" : "#d23f57"
             }] rounded-full w-7 h-7 flex justify-center text-base`}
+            onClick={() => increaseQuantity(item)}
           >
             +
           </button>
           <p>{item.quantity}</p>
-          <button className="border rounded-full w-7 h-7 flex justify-center text-base ">
+          <button
+            className="border rounded-full w-7 h-7 flex justify-center text-base "
+            onClick={decreaseQuantity}
+          >
             -
           </button>
         </div>
@@ -37,12 +79,15 @@ function CartItem({ item }) {
               color ? "#4BB4B4" : "#d23f57"
             }]`}
           >
-            $300.00
+            ${handleItemQuantityPrice()}.00
           </p>
         </div>
       </div>
 
-      <button className="hover:bg-[#F3F5F9] rounded-full p-1 cursor-pointer">
+      <button
+        className="hover:bg-[#F3F5F9] rounded-full p-1 cursor-pointer"
+        onClick={deleteItem}
+      >
         <IoMdClose color="#7d879c" size={20} />
       </button>
     </div>

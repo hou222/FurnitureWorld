@@ -8,6 +8,14 @@ function Cart({ isOpen, handleCart }) {
   const { color, cartProducts } = useContext(MyContext);
   //console.log(cartProducts);
   document.body.style.overflowX = "hidden";
+
+  function totalProducts() {
+    return cartProducts.reduce(
+      (total, item) => total + item.product.newPrice * item.quantity,
+      0
+    );
+  }
+
   return (
     <div
       className={`flex flex-col justify-between transition-all  duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-50 ${
@@ -18,7 +26,8 @@ function Cart({ isOpen, handleCart }) {
     >
       <div className=" px-10 py-6 flex justify-between items-center ">
         <div className="flex gap-2 text-sm items-center font-semibold text-[#0f3460]">
-          <HiOutlineShoppingBag color="#0f3460" />4 item
+          <HiOutlineShoppingBag color="#0f3460" />
+          {cartProducts.length} item
         </div>
 
         <button
@@ -40,7 +49,7 @@ function Cart({ isOpen, handleCart }) {
             color ? "#4BB4B4" : "#d23f57"
           }] text-white py-2 font-semibold text-sm w-full rounded-md`}
         >
-          Checkout Now ($867.00)
+          Checkout Now (${totalProducts()}.00)
         </button>
         <button
           className={`py-2  w-full border border-[${
