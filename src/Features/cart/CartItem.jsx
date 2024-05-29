@@ -2,23 +2,17 @@ import { useContext } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MyContext } from "../../MyContext";
 function CartItem({ item }) {
-  const {
-    color,
-    setCartProducts,
-    cartProducts,
-    increaseQuantity,
-    decreaseQuantity,
-  } = useContext(MyContext);
+  const { color, setCartProducts, cartProducts } = useContext(MyContext);
 
-  /* function increaseQunatity() {
+  function increaseQuantity() {
     const increasedQuantity = cartProducts.map((product) =>
       product.product.id === item.product.id
         ? { ...product, quantity: product.quantity + 1 }
         : product
     );
     setCartProducts(increasedQuantity);
-  } */
-  /* function decreaseQunatity() {
+  }
+  function decreaseQuantity() {
     const decreasedQuantity = cartProducts.map((product) =>
       product.product.id === item.product.id
         ? {
@@ -29,7 +23,7 @@ function CartItem({ item }) {
         : product
     );
     setCartProducts(decreasedQuantity);
-  } */
+  }
 
   function deleteItem() {
     const updateCart = cartProducts.filter(

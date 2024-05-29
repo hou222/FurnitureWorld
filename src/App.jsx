@@ -158,7 +158,7 @@ function App() {
   ];
   const [cartProducts, setCartProducts] = useState([]);
 
-  function increaseQunatity(item) {
+  function increaseQuantity(item) {
     const increasedQuantity = cartProducts.map((product) =>
       product.product.id === item.product.id
         ? { ...product, quantity: product.quantity + 1 }
@@ -167,7 +167,7 @@ function App() {
     setCartProducts(increasedQuantity);
   }
 
-  function decreaseQunatity(item) {
+  function decreaseQuantity(item) {
     const decreasedQuantity = cartProducts.map((product) =>
       product.product.id === item.product.id
         ? {
@@ -191,8 +191,8 @@ function App() {
           products,
           cartProducts,
           setCartProducts,
-          increaseQunatity,
-          decreaseQunatity,
+          increaseQuantity,
+          decreaseQuantity,
         }}
       >
         <BrowserRouter>

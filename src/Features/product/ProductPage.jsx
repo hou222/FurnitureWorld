@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Rating from "../cart/Rating";
 import { MyContext } from "../../MyContext";
 import { useParams } from "react-router";
@@ -10,10 +10,31 @@ function ProductPage() {
   const { setColor, products, setCartProducts, cartProducts } =
     useContext(MyContext);
   const { id } = useParams();
-  const [last] = useState();
+  //const [last] = useState();
   useEffect(() => {
     setColor(false);
   }, [setColor]);
+
+  function increaseQuantity() {
+    const increasedQuantity = cartProducts.map((product) =>
+      product.product.id === selectedProduct[0].id
+        ? { ...product, quantity: product.quantity + 1 }
+        : product
+    );
+    setCartProducts(increasedQuantity);
+  }
+  function decreaseQuantity() {
+    const decreasedQuantity = cartProducts.map((product) =>
+      product.product.id === selectedProduct[0].id
+        ? {
+            ...product,
+            quantity:
+              product.quantity > 0 ? product.quantity - 1 : product.quantity,
+          }
+        : product
+    );
+    setCartProducts(decreasedQuantity);
+  }
 
   const selectedProduct = products.filter((product) => {
     if (product.id.toString() === id) return product;
@@ -79,7 +100,10 @@ function ProductPage() {
             </button>
           ) : (
             <div className="flex">
-              <button className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md ">
+              <button
+                className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md "
+                onClick={() => increaseQuantity()}
+              >
                 +
               </button>
               <p className="px-4 flex justify-center items-center ">
@@ -87,7 +111,10 @@ function ProductPage() {
                   selectedProduct[0].id === item.product.id ? item.quantity : 0
                 )}
               </p>
-              <button className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md ">
+              <button
+                className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md "
+                onClick={() => decreaseQuantity()}
+              >
                 -
               </button>
             </div>
