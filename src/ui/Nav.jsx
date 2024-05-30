@@ -1,12 +1,14 @@
 import { IoMdClose } from "react-icons/io";
 import downArrow from "../assets/down-arrow.png";
 import List from "./List";
+import { useScroll } from "../hooks/useScroll";
 function Nav({ isOpen, handleOpen }) {
+  const scroll = useScroll();
   return (
     <nav
       className={`px-10 py-24 transition-all duration-300 absolute top-0 h-screen w-full flex justify-center items-start bg-white lg:transition-none lg:h-auto lg:w-fit lg:px-5 lg:py-3 lg:static z-10 ${
         isOpen ? "left-0 block" : "-left-full"
-      }`}
+      } ${scroll ? " lg:hidden" : ""}`}
     >
       <IoMdClose
         color="#7d879c"

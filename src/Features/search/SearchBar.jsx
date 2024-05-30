@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router";
+import { useScroll } from "../../hooks/useScroll";
 //import { MyContext } from "../../MyContext";
 function SearchBar() {
   //const { searchInput, setSearchInput } = useContext(MyContext);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const scroll = useScroll();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,7 +17,11 @@ function SearchBar() {
   }
 
   return (
-    <div className="flex items-center bg-[#F3F5F9]  rounded-md text-xs md:text-base">
+    <div
+      className={`flex items-center bg-[#F3F5F9]  rounded-md text-xs md:text-base ${
+        scroll ? "hidden lg:flex" : ""
+      }`}
+    >
       <form
         className="py-3 px-4 flex gap-3 w-[180px] md:w-[300px] lg:w-[500px]  border-r-2"
         onSubmit={handleSubmit}

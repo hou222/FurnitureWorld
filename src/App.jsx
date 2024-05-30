@@ -158,28 +158,6 @@ function App() {
   ];
   const [cartProducts, setCartProducts] = useState([]);
 
-  function increaseQuantity(item) {
-    const increasedQuantity = cartProducts.map((product) =>
-      product.product.id === item.product.id
-        ? { ...product, quantity: product.quantity + 1 }
-        : product
-    );
-    setCartProducts(increasedQuantity);
-  }
-
-  function decreaseQuantity(item) {
-    const decreasedQuantity = cartProducts.map((product) =>
-      product.product.id === item.product.id
-        ? {
-            ...product,
-            quantity:
-              product.quantity > 0 ? product.quantity - 1 : product.quantity,
-          }
-        : product
-    );
-    setCartProducts(decreasedQuantity);
-  }
-
   const [color, setColor] = useState(true);
   //const [searchInput, setSearchInput] = useState("");
   return (
@@ -191,8 +169,6 @@ function App() {
           products,
           cartProducts,
           setCartProducts,
-          increaseQuantity,
-          decreaseQuantity,
         }}
       >
         <BrowserRouter>

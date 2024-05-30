@@ -29,7 +29,7 @@ function ProductPage() {
         ? {
             ...product,
             quantity:
-              product.quantity > 0 ? product.quantity - 1 : product.quantity,
+              product.quantity > 1 ? product.quantity - 1 : product.quantity,
           }
         : product
     );

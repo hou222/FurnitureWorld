@@ -21,8 +21,10 @@ function Product({ product, onClick }) {
         className="w-[250px] h-[250px] absolute top-10 left-0 right-0 m-auto"
       />
       <div className="absolute  bottom-0 left-0 right-0 p-3">
-        <p className="font-semibold text-2xl">{product.nameP}</p>
-        <div className="flex gap-2 mt-5">
+        <p className="font-semibold text-2xl w-fit bg-yellow-300">
+          {product.nameP}
+        </p>
+        <div className="flex gap-2 mt-5 w-fit bg-red-500">
           <div className="rounded-full w-3 h-3 bg-[#7D879C]"></div>
           <div className="rounded-full w-3 h-3 bg-[#4E97FD]"></div>
           <div className="rounded-full w-3 h-3 bg-[#33D067]"></div>
@@ -39,11 +41,19 @@ function Product({ product, onClick }) {
               ""
             )}
           </p>
-          <div
-            className={`w-8 h-8  text-2xl border border-[#4BB4B4]  text-[#4BB4B4] flex justify-center items-center`}
+        </div>
+        <div className="w-fit absolute right-3 bottom-3">
+          <button
+            className={`w-8 h-8 hover:bg-green-100 duration-150 text-2xl border border-[#4BB4B4]  text-[#4BB4B4] flex justify-center items-center`}
           >
             <img src={plus} alt="plus" />
-          </div>
+          </button>
+          <p className="flex justify-center items-center">1</p>
+          <button
+            className={`w-8 h-8 hover:bg-green-100 duration-150 text-2xl border border-[#4BB4B4]  text-[#4BB4B4] flex justify-center items-center`}
+          >
+            <img src={plus} alt="plus" />
+          </button>
         </div>
       </div>
     </div>
