@@ -1,5 +1,4 @@
 import { IoIosMenu } from "react-icons/io";
-import { HiOutlineUser } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import SearchBar from "../Features/search/SearchBar";
 import { IconContext } from "react-icons";
@@ -12,7 +11,6 @@ import Cart from "../Features/cart/Cart";
 import category from "../assets/category.png";
 import rightArr from "../assets/right.png";
 import { NavLink } from "react-router-dom";
-import Product from "../Features/product/Product";
 import { useScroll } from "../hooks/useScroll";
 
 function HeaderMiddle() {
@@ -33,13 +31,10 @@ function HeaderMiddle() {
   }
   function handleCart() {
     setCartOpen((open) => !open);
-    cartOpen
-      ? (document.body.style.overflow = "unset")
-      : (document.body.style.overflow = "hidden");
   }
   return (
-    <div className={` `}>
-      <div className={` text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0 `}>
+    <div>
+      <div className="text-center w-full p-3 lg:px-5 lg:pt-5 lg:p-0">
         <IconContext.Provider
           value={{ size: "23", color: "#7d879c", className: "cursor-pointer" }}
         >
@@ -48,7 +43,7 @@ function HeaderMiddle() {
               <button className="z-1 lg:hidden bg-blue-500" onClick={handleNav}>
                 <IoIosMenu className="absolute top-4  left-6" />
               </button>
-              {/* <Nav isOpen={isOpen} handleOpen={handleOpen} /> */}
+
               <div className="flex flex-col justify-center items-center gap-5 ">
                 <Logo
                   onClick={() => {
@@ -58,9 +53,6 @@ function HeaderMiddle() {
                 <SearchBar />
               </div>
               <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
-                {/* <button className="hover:bg-[#F3F5F9] rounded-full p-2">
-                  <HiOutlineUser />
-                </button> */}
                 <button
                   className="hover:bg-[#F3F5F9] rounded-full p-2"
                   onClick={handleCart}
@@ -115,8 +107,10 @@ function HeaderMiddle() {
                   </NavLink>
                 </ul>
               </div>
+
               <Nav isOpen={isOpen} handleOpen={handleNav} />
               <Cart isOpen={cartOpen} handleCart={handleCart} />
+
               <div
                 className={`fixed z-40 top-0 left-0 right-0 bottom-0 sm:bg-[#00000094] duration-300 ${
                   cartOpen ? "visible opacity-100" : "invisible opacity-0"

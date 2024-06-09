@@ -159,7 +159,6 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   const [color, setColor] = useState(true);
-  //const [searchInput, setSearchInput] = useState("");
   return (
     <div>
       <MyContext.Provider

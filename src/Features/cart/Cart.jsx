@@ -6,7 +6,6 @@ import { MyContext } from "../../MyContext";
 
 function Cart({ isOpen, handleCart }) {
   const { color, cartProducts } = useContext(MyContext);
-  //console.log(cartProducts);
   document.body.style.overflowX = "hidden";
 
   function totalProducts() {
@@ -18,10 +17,8 @@ function Cart({ isOpen, handleCart }) {
 
   return (
     <div
-      className={`flex flex-col justify-between transition-all  duration-300 absolute  top-0 h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-50 ${
-        isOpen
-          ? "right-0"
-          : "-right-full sm:-right-2/3 md:-right-1/2 lg:-right-1/4"
+      className={`flex flex-col justify-between transition-all  duration-300 fixed top-0 right-0  transform h-screen w-full bg-white sm:w-2/3 md:w-1/2 lg:w-1/4 z-50 ${
+        !isOpen ? "translate-x-full" : ""
       }`}
     >
       <div className=" px-10 py-6 flex justify-between items-center ">

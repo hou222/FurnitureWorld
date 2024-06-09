@@ -1,3 +1,9 @@
+import chair1 from "../assets/chair1.png";
+import chair2 from "../assets/chair2.png";
+import chair3 from "../assets/chair3.png";
+import chair4 from "../assets/chair4.png";
+import chair5 from "../assets/chair5.png";
+
 function ImportantDetails() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 py-10 px-3 xl:px-0 gap-6 max-w-screen-xl mx-auto">
@@ -11,7 +17,7 @@ function ImportantDetails() {
           </a>
         </div>
         <img
-          src="src/assets/chair1.png"
+          src={chair1}
           alt="chair"
           className="w-[120px] h-[140px] lg:w-[150px] lg:h-[170px] xl:w-[200px] xl:h-[240px]"
         />
@@ -26,7 +32,7 @@ function ImportantDetails() {
           </a>
         </div>
         <img
-          src="src/assets/chair2.png"
+          src={chair2}
           alt="chair"
           className="w-[280px] h-[150px] lg:w-[330px] lg:h-[190px] xl:w-[400px] xl:h-[220px]"
         />
@@ -41,7 +47,7 @@ function ImportantDetails() {
             Shop Now
           </a>
         </div>
-        <img src="src/assets/chair3.png" alt="chair" />
+        <img src={chair3} alt="chair" />
       </div>
       <div className="flex justify-between items-center py-4 px-7 lg:px-8 bg-[#fafafa] ">
         <div className="flex flex-col gap-1">
@@ -55,7 +61,7 @@ function ImportantDetails() {
           </a>
         </div>
         <img
-          src="src/assets/chair4.png"
+          src={chair4}
           alt="chair"
           className="w-[120px] h-[130px] md:w-[190px] md:h-[200px] lg:w-[220px] lg:h-[230px]"
         />
@@ -70,7 +76,7 @@ function ImportantDetails() {
           </a>
         </div>
         <img
-          src="src/assets/chair5.png"
+          src={chair5}
           alt="chair"
           className="w-[200px] h-[200px] sm:w-[180px] sm:h-[180px] lg:w-[240px] lg:h-[240px]"
         />

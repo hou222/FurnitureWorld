@@ -21,10 +21,6 @@ function SlideDetails({ handlerScroll }) {
       >
         Shop Now
       </button>
-      {/* <div className="bg-red-600 w-full flex justify-center gap-2 p-3 absolute bottom-0">
-      <div className="w-3 h-3 border  border-blue-600 rounded-full"></div>
-      <div className="w-3 h-3 border border-blue-600 rounded-full"></div>
-    </div> */}
     </div>
   );
 }

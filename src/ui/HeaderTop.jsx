@@ -1,5 +1,5 @@
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
-import { MdOutlineWbSunny } from "react-icons/md";
+
 import { GrTwitter } from "react-icons/gr";
 import { useContext } from "react";
 import { MyContext } from "../MyContext";
@@ -24,9 +24,9 @@ function HeaderTop() {
           <p className="text-white">Free Express Shipping</p>
         </div>
         <div className="flex justify-center items-center gap-2">
-          <FaInstagram className="text-white w-4 h-4 md:w-5 md:h-5" />
-          <FaFacebookSquare className="text-white w-4 h-4 md:w-5 md:h-5" />
-          <GrTwitter className="text-white w-4 h-4 md:w-5 md:h-5" />
+          <FaInstagram className="text-white w-4 h-4 md:w-5 md:h-5 cursor-pointer" />
+          <FaFacebookSquare className="text-white w-4 h-4 md:w-5 md:h-5 cursor-pointer" />
+          <GrTwitter className="text-white w-4 h-4 md:w-5 md:h-5 cursor-pointer" />
         </div>
       </div>
     </div>

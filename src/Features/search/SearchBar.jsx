@@ -1,10 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router";
 import { useScroll } from "../../hooks/useScroll";
-//import { MyContext } from "../../MyContext";
 function SearchBar() {
-  //const { searchInput, setSearchInput } = useContext(MyContext);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const scroll = useScroll();

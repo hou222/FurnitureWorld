@@ -10,7 +10,6 @@ function ProductPage() {
   const { setColor, products, setCartProducts, cartProducts } =
     useContext(MyContext);
   const { id } = useParams();
-  //const [last] = useState();
   useEffect(() => {
     setColor(false);
   }, [setColor]);
@@ -39,7 +38,6 @@ function ProductPage() {
   const selectedProduct = products.filter((product) => {
     if (product.id.toString() === id) return product;
   });
-  //console.log(selectedProduct);
 
   const addProductToCartFunction = (prod) => {
     const alreadyProduct = cartProducts.find(
@@ -102,20 +100,21 @@ function ProductPage() {
             <div className="flex">
               <button
                 className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md "
-                onClick={() => increaseQuantity()}
+                onClick={() => decreaseQuantity()}
               >
-                +
+                -
               </button>
               <p className="px-4 flex justify-center items-center ">
-                {cartProducts.map((item) =>
-                  selectedProduct[0].id === item.product.id ? item.quantity : 0
+                {cartProducts.map(
+                  (item) =>
+                    selectedProduct[0].id === item.product.id && item.quantity
                 )}
               </p>
               <button
                 className="border border-[#d23f57] w-10 h-10 text-[#d23f57] font-bold rounded-md "
-                onClick={() => decreaseQuantity()}
+                onClick={() => increaseQuantity()}
               >
-                -
+                +
               </button>
             </div>
           )}

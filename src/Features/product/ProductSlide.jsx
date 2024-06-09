@@ -16,7 +16,6 @@ function ProductSlide({ children, newP }) {
   const filtredNew = products.filter((product) => {
     if (product.newProd) return product;
   });
-  //console.log(filtredNew);
   const settings = {
     dots: false,
     infinite: true,

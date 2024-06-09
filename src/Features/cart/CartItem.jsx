@@ -39,7 +39,7 @@ function CartItem({ item }) {
   return (
     <div className="flex justify-between items-center px-6 py-4 border-t">
       <div className="flex gap-3 justify-start items-center">
-        <div className="">
+        <div className="flex flex-col justify-center items-center">
           <button
             className={`border border-[${
               color ? "#4BB4B4" : "#d23f57"

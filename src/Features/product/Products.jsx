@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Product from "./Product";
 import { MyContext } from "../../MyContext";
 import { useNavigate } from "react-router";
-function Products({ children, ref }) {
+function Products({ children }) {
   const { products } = useContext(MyContext);
   const navigate = useNavigate();
 
@@ -16,7 +16,6 @@ function Products({ children, ref }) {
             product={product}
             onClick={() => {
               navigate(`/product/${product.id}`);
-              //navigate(`/product`);
             }}
           />
         ))}

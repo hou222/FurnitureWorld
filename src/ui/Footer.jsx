@@ -4,6 +4,8 @@ import google from "../assets/google.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
 import youtube from "../assets/youtube.png";
+import playstore from "../assets/playstore.png";
+import appstore from "../assets/appstore.png";
 
 function Footer() {
   return (
@@ -21,7 +23,7 @@ function Footer() {
         <div className="flex flex-row gap-4">
           <div className=" bg-[#161d2b] px-3 py-1 rounded-sm text-white flex flex-row gap-2 items-center cursor-pointer">
             <img
-              src="/src/assets/playstore.png"
+              src={playstore}
               alt="playstore"
               className="w-[26px] h-[26px]"
             />
@@ -31,11 +33,7 @@ function Footer() {
             </div>
           </div>
           <div className=" bg-[#161d2b] px-3 py-1 rounded-sm text-white flex flex-row gap-2 items-center cursor-pointer">
-            <img
-              src="/src/assets/appstore.png"
-              alt="appstore"
-              className="w-[26px] h-[26px]"
-            />
+            <img src={appstore} alt="appstore" className="w-[26px] h-[26px]" />
             <div className="flex flex-col">
               <p className="text-[10px] font-semibold">Download on the</p>
               <p className="font-bold text-[17px]">App Store</p>

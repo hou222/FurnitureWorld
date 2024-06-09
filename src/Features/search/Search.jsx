@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { MyContext } from "../../MyContext";
 import Product from "../product/Product";
@@ -6,9 +6,7 @@ import Product from "../product/Product";
 function Search() {
   const { query } = useParams();
   const { products, setColor } = useContext(MyContext);
-  //const [filtredProducts, setFiltredProducts] = useState("");
   const navigate = useNavigate();
-  //console.log(`the result is: ${query}`);
 
   useEffect(() => {
     setColor(true);
@@ -17,8 +15,6 @@ function Search() {
   const filteredProducts = products.filter((product) => {
     if (product.nameP.toLowerCase().includes(query)) return product;
   });
-
-  //console.log(filteredProducts);
 
   return (
     <div className=" max-w-screen-xl mx-auto  ">

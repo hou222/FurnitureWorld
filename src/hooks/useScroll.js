@@ -5,7 +5,6 @@ export function useScroll() {
 
   function handleScroll() {
     setScroll(window.scrollY);
-    console.log(window.scrollY);
   }
 
   useEffect(() => {

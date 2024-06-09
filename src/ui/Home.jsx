@@ -15,14 +15,10 @@ function Home() {
   useEffect(() => {
     setColor(true);
   }, [setColor]);
-  /* function handlerScroll() {
-    myRef.current.scrollIntoview();
-  } */
+
   const handlerScroll = () =>
     myRef.current.scrollIntoView({ behavior: "smooth" });
-  /* function handlerScroll() {
-    document.getElementById("22").scrollIntoView({ behavior: "smooth" });
-  } */
+
   const slideImages = [
     {
       url: "src/assets/bg-furniture.jpg",
