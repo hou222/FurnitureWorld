@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MyContext } from "./MyContext";
 import AppLayout from "./ui/AppLayout";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -159,6 +159,7 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   const [color, setColor] = useState(true);
+  const ref = useRef();
   return (
     <div>
       <MyContext.Provider
@@ -168,6 +169,7 @@ function App() {
           products,
           cartProducts,
           setCartProducts,
+          ref,
         }}
       >
         <BrowserRouter>

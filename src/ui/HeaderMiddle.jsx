@@ -50,7 +50,12 @@ function HeaderMiddle() {
                     navigate("/home");
                   }}
                 />
-                <SearchBar />
+                <SearchBar
+                  handleDropDown={handleDropDown}
+                  category={category}
+                  isOpen1={isOpen1}
+                  rightArr={rightArr}
+                />
               </div>
               <div className="flex justify-center items-center gap-2  absolute top-1 right-6 ">
                 <button
