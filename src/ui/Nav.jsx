@@ -18,7 +18,7 @@ function Nav({ isOpen, handleOpen }) {
   }
   return (
     <nav
-      className={`px-10 py-24 transition-all duration-300 fixed left-0 top-0 h-screen transform w-full flex justify-center items-start bg-white lg:transition-none lg:h-auto lg:w-fit lg:px-5 lg:py-3 lg:static z-10 ${
+      className={`px-10 py-24 transition-all duration-300 fixed left-0 top-0 h-screen transform w-full flex justify-center items-start bg-white lg:transition-none lg:h-auto lg:w-fit lg:px-5 lg:py-3 lg:static z-30 ${
         !isOpen ? "-translate-x-full lg:translate-x-0 block " : "-left-full"
       } ${scroll ? " lg:hidden" : ""}`}
     >
