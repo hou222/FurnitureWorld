@@ -40,8 +40,9 @@ function Home() {
   };
   const slider = useRef(null);
   function handleSlide(index) {
+    slide === 0 && index === 1 && slider?.current?.slickPrev();
+    slide === 1 && index === 0 && slider?.current?.slickNext();
     setSlide(index);
-    index === 0 ? slider?.current?.slickPrev() : slider?.current?.slickNext();
   }
   return (
     <div className="max-w-screen-xl mx-auto ">

@@ -1,5 +1,4 @@
 import { FaInstagram, FaFacebookSquare } from "react-icons/fa";
-
 import { GrTwitter } from "react-icons/gr";
 import { useContext } from "react";
 import { MyContext } from "../MyContext";
