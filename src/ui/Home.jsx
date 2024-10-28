@@ -6,6 +6,7 @@ import ImportantDetails from "./ImportantDetails";
 import { useContext, useEffect, useRef, useState } from "react";
 import { MyContext } from "../MyContext";
 import ProductSlide from "../Features/product/ProductSlide";
+import { motion } from "framer-motion";
 
 function Home() {
   const { setColor } = useContext(MyContext);
@@ -44,6 +45,20 @@ function Home() {
     slide === 1 && index === 0 && slider?.current?.slickNext();
     setSlide(index);
   }
+
+  const marqueeVariants = {
+    animate: {
+      x: [600, -600],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 15,
+          ease: "linear",
+        },
+      },
+    },
+  };
   return (
     <div className="max-w-screen-xl mx-auto ">
       <div className="relative">
@@ -71,6 +86,32 @@ function Home() {
         </div>
       </div>
       <ImportantDetails />
+
+      <div className="px-3 lg:px-0 py-6">
+        <div className="bg-[#4BB4B4] text-white p-2 relative flex justify-center ">
+          <div className="bg-white text-[#4BB4B4] w-2/4 mx-auto text-center font-bold text-2xl py-6 absolute top-0 z-10">
+            BLACK FRIDAY SALE!
+          </div>
+          <div className="border-dashed border flex justify-center flex-col items-center p-4 pt-16 w-[100vw] relative max-w-full h-[206px] overflow-x-hidden">
+            <motion.div
+              className="py-6 top-20  
+              
+              absolute
+              
+               whitespace-nowrap  will-change-transform"
+              variants={marqueeVariants}
+              animate="animate"
+            >
+              <h1 className=" text-3xl text-white  font-bold italic">
+                pay only for your loving furnitures
+              </h1>
+            </motion.div>
+            <button className="bg-white  text-black px-4 py-1 font-semibold hover:bg-[#4BB4B4] hover:text-white absolute bottom-3">
+              shop now
+            </button>
+          </div>
+        </div>
+      </div>
 
       <ProductSlide newP={false}>
         <h1 className="font-semibold text-3xl mb-3">Top Selling Product</h1>
