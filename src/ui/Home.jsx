@@ -89,26 +89,24 @@ function Home() {
 
       <div className="px-3 lg:px-0 py-6">
         <div className="bg-[#4BB4B4] text-white p-2 relative flex justify-center ">
-          <div className="bg-white text-[#4BB4B4] w-2/4 mx-auto text-center font-bold text-2xl py-6 absolute top-0 z-10">
+          <div className="bg-white text-black w-3/4 sm:w-2/4 sm:1/3 mx-auto text-center font-bold text-2xl py-6 absolute sm:text-nowrap  top-0 z-10  sm:-left-5 flex justify-center items-center sm:bottom-0 xl:w-1/4 sm:-skew-x-[20deg] ">
             BLACK FRIDAY SALE!
           </div>
-          <div className="border-dashed border flex justify-center flex-col items-center p-4 pt-16 w-[100vw] relative max-w-full h-[206px] overflow-x-hidden">
+          <div className="border-dashed border flex justify-center flex-col items-center  w-[100vw] relative max-w-full h-[206px]  overflow-x-hidden  sm:flex-row sm:h-[80px] sm:pt-">
             <motion.div
-              className="py-6 top-20  
-              
-              absolute
-              
-               whitespace-nowrap  will-change-transform"
+              className="absolute whitespace-nowrap  will-change-transform"
               variants={marqueeVariants}
               animate="animate"
             >
-              <h1 className=" text-3xl text-white  font-bold italic">
+              <h1 className=" text-3xl text-white  font-bold sm:font-semibold italic">
                 pay only for your loving furnitures
               </h1>
             </motion.div>
-            <button className="bg-white  text-black px-4 py-1 font-semibold hover:bg-[#4BB4B4] hover:text-white absolute bottom-3">
-              shop now
-            </button>
+            <div className="absolute bottom-0 sm:right-0 sm:top-0 sm:bottom-0 bg-[#4BB4B4] flex flex-col align-center p-2 justify-center">
+              <button className="bg-white text-black px-4 py-1 font-semibold hover:bg-[#4BB4B4]  hover:text-white ">
+                shop now
+              </button>
+            </div>
           </div>
         </div>
       </div>
